@@ -3,3 +3,42 @@
 	margin:0;
 	padding:0;
 }
+
+#menu{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	background-color:#ccc;
+}
+
+#navbar ul{
+	display:flex;
+	flex-direction:row;
+	list-style:none;
+	height:100%;
+	margin:0px;
+}
+
+#navbar li{
+	height:100%;
+	display:block;
+}
+
+#navbar a{
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	height:100%;
+	background-color:#aaa;
+}
+
+#search{
+	border:none;
+}
+
+#search fieldset{
+	border:none;
+	margin:0;
+	padding:0;
+	height: 100%;
+}
