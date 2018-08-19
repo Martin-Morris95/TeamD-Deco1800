@@ -9,6 +9,10 @@
 	flex-direction:row;
 	justify-content:space-between;
 	background-color:#ccc;
+	/*might need to change this since it does not work in IE/Edge 15 or below*/
+	position:sticky;
+	top:0;
+	width:100%;
 }
 
 #navbar ul{
@@ -30,6 +34,8 @@
 	display:block;
 	height:100%;
 	background-color:#aaa;
+	padding:5px;
+	box-sizing:border-box;
 }
 
 #search{
@@ -41,4 +47,15 @@
 	margin:0;
 	padding:0;
 	height: 100%;
+}
+
+footer{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	background-color:#ccc;
+}
+
+footer ul{
+	list-style:none;
 }
