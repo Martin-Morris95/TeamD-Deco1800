@@ -10,7 +10,14 @@
   				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 				  crossorigin="anonymous"></script>
 		<script src="Javascript/Script.js"></script>
+        
+        <!--google maps script-->
+        
+       
+        
+           
 	</head>
+    
 	<body>
 		<header id="menu">
 			<figure id="logo">
@@ -36,13 +43,19 @@
 				</fieldset>
 			</form>
 		</header>
-		<section>
-			<p>text</p>
-		</section>
+		
+        <div id = "map"></div>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6yDELatMm6K5DVXRZeo4rKEsQd1MR7NU&callback=initMap"async defer></script>
+        <script src= "Javascript/Maps.js"></script>
+		
 		<footer>
 			<ul>
 				<li><a href="#">link 1</a></li>
 			</ul>
 		</footer>
+               
+        
+
 	</body>
 </html>
