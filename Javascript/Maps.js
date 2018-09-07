@@ -5,6 +5,25 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), { center: {lat: -34.397, lng: 150.644},
           zoom: 8, disableDefaultUI: true, mapTypeId: 'terrain'});
 
+  map.set('styles', [{
+    featureType: 'all',
+    elementType: 'labels',
+    stylers: [
+      {visibility: 'off'}
+    ]
+  }, {
+    featureType: 'administrative.country',
+    elementType: 'labels',
+    stylers: [
+      {visibility: 'on'}
+    ]
+  }, {
+    featureType: 'road',
+    styles: [
+      {visibility: 'off'}
+    ]
+  }])
+
   // and other stuff...
   $("#search #submit").click(function(event) {
     event.preventDefault();
@@ -17,7 +36,8 @@ function initMap() {
   map.addListener('click', function(event) {
     var longitude = event.latLng.lng();
     var latitude = event.latLng.lat();
-    addMarker(latitude, longitude, "Images/test.png");
+    marker = addMarker(latitude, longitude, "Images/test.png");
+    setMarkerFocus(marker, 8);
     if(markers.length > 5){
       console.log("more than 5 markers");
       marker = markers.shift();
@@ -41,4 +61,13 @@ function addMarker(latt, long, icon = null){
   });
   markers.push(marker);
   return marker;
+}
+
+function setMarkerFocus(marker, zoom) {
+  marker.addListener('click', function(event) {
+    var latt = marker.getPosition().lat();
+    var long = marker.getPosition().lng();
+    updateMap(latt, long);
+    map.setZoom(zoom);
+  })
 }
