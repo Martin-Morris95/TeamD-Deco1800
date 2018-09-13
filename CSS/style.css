@@ -1,7 +1,7 @@
-<!-->CSS Doc<-->
+/*CSS Doc*/
 *{
-	margin:0;
-	padding:0;
+	margin:0px;
+	padding:0px;
 }
 html, body {
     height: 100%;
@@ -68,4 +68,13 @@ footer ul{
   
     height: 80%;
   
+}
+
+#back{
+	position: fixed;
+	z-index: 1;
+}
+
+.hidden{
+	display: none;
 }

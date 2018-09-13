@@ -38,11 +38,17 @@
 					<input type="text" id="longitude_text">
 					<label for="latitude_text">Latitude</label>
 					<input type="text" id="latitude_text">
-					<button type="submit" id="submit">Search</button>
+					<button type="button" id="submit">Search</button>
 				</fieldset>
 			</form>
 		</header>
 		
+		<form id="back" class="hidden">
+			<fieldset>
+				<button type="button" id="back_button">Back</button>
+			</fieldset>
+		</form>
+
         <div id = "map"></div>
         
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6yDELatMm6K5DVXRZeo4rKEsQd1MR7NU&callback=initMap"async defer></script>
