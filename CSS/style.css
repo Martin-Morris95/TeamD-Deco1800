@@ -78,3 +78,11 @@ footer ul{
 .hidden{
 	display: none;
 }
+
+.popup{
+	position: absolute;
+	z-index: 1;
+	background-color: lightgray;
+	padding: 5px;
+	border-radius: 2px;
+}

@@ -6,8 +6,8 @@ var current;
 $(document).ready(function() {
   $("#back_button").click(function() {
     current.hideChildren();
+    current.hideChildrenPopups();
     current = current.getParent();
-    console.log(current);
     current.showChildren();
     current.changeZoom();
     if(current.isRoot()) {
@@ -41,8 +41,13 @@ Node.prototype.showChildren = function() {
   })
 }
 
+Node.prototype.hideChildrenPopups = function() {
+  this.children.forEach(function(child) {
+    child.hidePopup();
+  })
+}
+
 Node.prototype.changeZoom = function() {
-  console.log("changed zoom " + this.zoom);
   map.setZoom(this.zoom);
 }
 
@@ -64,7 +69,7 @@ Root.prototype.isRoot = function() {
   return true;
 }
 
-function Marker(latt, long, zoom=null, icon=null) {
+function Marker(latt, long, zoom=null, icon=null, popup=null) {
   Node.call(this, zoom);
 
   this.marker = new google.maps.Marker({
@@ -73,13 +78,17 @@ function Marker(latt, long, zoom=null, icon=null) {
     icon: icon
   });
   this.parent = null;
+  this.popup = popup;
   
   var self = this;
+  //this.marker.addListener('click', this.click);
   this.marker.addListener('click', function(event) {
     self.changeZoom();
+    self.showPopup();
     if(!self.isBottom()) {
       if(self.parent != null) {
         self.parent.hideChildren();
+        self.parent.hideChildrenPopups();
       }
       else {
         self.hide();
@@ -114,6 +123,44 @@ Marker.prototype.getPosition = function() {
   return this.marker.getPosition();
 }
 
+Marker.prototype.showPopup = function() {
+  if(this.popup != null) {
+ //   var position = LattLongToPixels(this.marker.getPosition());
+  //  this.popup.setPosition(position);
+    this.popup.show();
+  }
+}
+
+Marker.prototype.hidePopup = function() {
+  if(this.popup != null) {
+    this.popup.hide();
+  }
+}
+
+Popup = function(position, content, hidden=true) {
+  this.content = content;
+  this.position = position;
+  this.content.style.left = position[0] + 'px';
+  this.content.style.top = position[1] + 'px';
+  this.content.classList.add("popup");
+  document.getElementById("popups").appendChild(this.content);
+  if(hidden) {
+    this.content.classList.add("hidden");
+  }
+}
+
+Popup.prototype.show = function() {
+  this.content.classList.remove("hidden");
+}
+
+Popup.prototype.hide = function() {
+  this.content.classList.add("hidden");
+}
+
+Popup.prototype.setPosition = function(position) {
+  self.position = position;
+}
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), { center: {lat: -34.397, lng: 150.644},
           zoom: 8, disableDefaultUI: true, mapTypeId: 'terrain'});
@@ -137,12 +184,17 @@ function initMap() {
     ]
   }])
 
+
+  var content = document.createElement("p");
+  content.innerHTML = "popup";
+  var popup = new Popup([100, 100], content);  
+
   root = new Root(8);
   current = root;
 
   var marker1 = new Marker(-35, 150, 10);
   var marker2 = new Marker(-34.7, 150, 12);
-  var marker3 = new Marker(-35.1, 150.5);
+  var marker3 = new Marker(-35.1, 150.5, null, null, popup);
   var marker4 = new Marker(-34.71, 150.02);
   var marker5 = new Marker(-35.5, 149, 10);
   var marker6 = new Marker(-35.6, 148.7);
@@ -213,4 +265,17 @@ function setMarkerFocus(marker, zoom) {
     updateMap(latt, long);
     map.setZoom(zoom);
   })
+}
+
+function LattLongToPixels(lattlong) {
+  var project = map.getProjection().fromLatLngToPoint;
+  var bounds = map.getBounds();
+  console.log(bounds);
+  var left = project(bounds.getSouthWest()).x;
+  var top = project(bounds.getNorthWest()).y;
+  var scale = Math.pow(2, map.getZoom());
+  var position = project(lattlong);
+  var x = (position.x - left) * scale;
+  var y = (position.y - top) * scale;
+  return [x, y];
 }
