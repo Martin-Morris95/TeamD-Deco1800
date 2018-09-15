@@ -85,4 +85,32 @@ footer ul{
 	background-color: lightgray;
 	padding: 5px;
 	border-radius: 2px;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%,-50%);
+	height: 50%;
+	width: 50%;
+}
+
+.popup h2, .popup h3{
+	text-transform: capitalize;
+	font-variant: small-caps;
+}
+
+.popup .stats{
+	display: grid;
+	grid-template-columns: auto 1fr;
+}
+
+.popup .stats h4{
+	text-transform: capitalize;
+	font-variant: small-caps;
+}
+
+.popup .stats h4::after{
+	content: ":";
+}
+
+.popup .stats p{
+	margin-left: 5px;
 }

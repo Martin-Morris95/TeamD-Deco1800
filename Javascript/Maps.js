@@ -7,6 +7,7 @@ $(document).ready(function() {
   $("#back_button").click(function() {
     current.hideChildren();
     current.hideChildrenPopups();
+    current.hidePopup();
     current = current.getParent();
     current.showChildren();
     current.changeZoom();
@@ -48,7 +49,11 @@ Node.prototype.hideChildrenPopups = function() {
 }
 
 Node.prototype.changeZoom = function() {
+  if(this.zoom == null) {
+    return false;
+  }
   map.setZoom(this.zoom);
+  return true;
 }
 
 Node.prototype.isRoot = function() {
@@ -83,7 +88,10 @@ function Marker(latt, long, zoom=null, icon=null, popup=null) {
   var self = this;
   //this.marker.addListener('click', this.click);
   this.marker.addListener('click', function(event) {
-    self.changeZoom();
+    if(self.changeZoom()) {
+      current = self;
+      updateMap(self.marker.getPosition().lat(), self.marker.getPosition().lng());
+    }
     self.showPopup();
     if(!self.isBottom()) {
       if(self.parent != null) {
@@ -94,9 +102,7 @@ function Marker(latt, long, zoom=null, icon=null, popup=null) {
         self.hide();
       }
       self.showChildren();
-      updateMap(self.marker.getPosition().lat(), self.marker.getPosition().lng());
       showBack();
-      current = self;
     }
   });
 }
@@ -125,8 +131,6 @@ Marker.prototype.getPosition = function() {
 
 Marker.prototype.showPopup = function() {
   if(this.popup != null) {
- //   var position = LattLongToPixels(this.marker.getPosition());
-  //  this.popup.setPosition(position);
     this.popup.show();
   }
 }
@@ -137,11 +141,11 @@ Marker.prototype.hidePopup = function() {
   }
 }
 
-Popup = function(position, content, hidden=true) {
+Popup = function(content, hidden=true) {
   this.content = content;
-  this.position = position;
-  this.content.style.left = position[0] + 'px';
-  this.content.style.top = position[1] + 'px';
+  //this.position = position;
+  //this.content.style.left = position[0] + 'px';
+  //this.content.style.top = position[1] + 'px';
   this.content.classList.add("popup");
   document.getElementById("popups").appendChild(this.content);
   if(hidden) {
@@ -156,13 +160,14 @@ Popup.prototype.show = function() {
 Popup.prototype.hide = function() {
   this.content.classList.add("hidden");
 }
-
+/*
 Popup.prototype.setPosition = function(position) {
   self.position = position;
 }
+*/
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), { center: {lat: -34.397, lng: 150.644},
+  map = new google.maps.Map(document.getElementById('map'), { center: {lat: 31, lng: 68},
           zoom: 8, disableDefaultUI: true, mapTypeId: 'terrain'});
 
   map.set('styles', [{
@@ -182,9 +187,14 @@ function initMap() {
     styles: [
       {visibility: 'off'}
     ]
-  }])
+  }, {
+    featureType: 'administrative',
+    elementType: 'geometry',
+    stylers: [
+      {visibility: 'off'}
+  ]}])
 
-
+/*
   var content = document.createElement("p");
   content.innerHTML = "popup";
   var popup = new Popup([100, 100], content);  
@@ -194,7 +204,7 @@ function initMap() {
 
   var marker1 = new Marker(-35, 150, 10);
   var marker2 = new Marker(-34.7, 150, 12);
-  var marker3 = new Marker(-35.1, 150.5, null, null, popup);
+  var marker3 = new Marker(-35.1, 150.5, 13, null, popup);
   var marker4 = new Marker(-34.71, 150.02);
   var marker5 = new Marker(-35.5, 149, 10);
   var marker6 = new Marker(-35.6, 148.7);
@@ -208,7 +218,18 @@ function initMap() {
   marker2.addChild(marker4);
   root.addChild(marker5);
   marker5.addChild(marker6);
+*/
 
+  root = new Root(2.5);
+  var turkey = new Marker(39, 35, 6);
+  root.addChild(turkey);
+  root.changeZoom();
+  var stats = {"casualties" : "115000", "involved" : "Australia, Turkey"};
+  var popupContent = createPopupContent("Gallipoli", ["Lorem Ipsum"], stats);
+  var popup = new Popup(popupContent);
+  var gallipoli = new Marker(40.3, 26.5, 7, null, popup);
+  turkey.addChild(gallipoli);
+  gallipoli.hide();
   // and other stuff...
   $("#search #submit").click(function(event) {
     event.preventDefault();
@@ -218,20 +239,12 @@ function initMap() {
     console.log("Longitude: " + $("#longitude_text").val() + "\nLatitude: " + $("#latitude_text").val());
   });
 
-  /*
+  
   map.addListener('click', function(event) {
     var longitude = event.latLng.lng();
     var latitude = event.latLng.lat();
-    marker = addMarker(latitude, longitude);
-    setMarkerFocus(marker, 8);
-    if(markers.length > 5){
-      console.log("more than 5 markers");
-      marker = markers.shift();
-      marker.setMap(null);
-    }
     console.log("Longitude: " + longitude + "\nLatitude" + latitude);
   });
-  */
 }
 
 function showBack() {
@@ -267,15 +280,41 @@ function setMarkerFocus(marker, zoom) {
   })
 }
 
-function LattLongToPixels(lattlong) {
-  var project = map.getProjection().fromLatLngToPoint;
-  var bounds = map.getBounds();
-  console.log(bounds);
-  var left = project(bounds.getSouthWest()).x;
-  var top = project(bounds.getNorthWest()).y;
-  var scale = Math.pow(2, map.getZoom());
-  var position = project(lattlong);
-  var x = (position.x - left) * scale;
-  var y = (position.y - top) * scale;
-  return [x, y];
+function createPopupContent(title, text, statistics) {
+  var content = document.createElement("div");
+  var h = document.createElement("h2");
+  h.innerHTML = title;
+  content.appendChild(h);
+  text.forEach(function(p) {
+    var paragraph = document.createElement("p");
+    paragraph.innerHTML = p;
+    content.appendChild(paragraph);
+  })
+  var statsH = document.createElement("h3");
+  statsH.innerHTML = "Stats";
+  content.appendChild(statsH);
+  var stats = document.createElement("div");
+  stats.classList.add("stats");
+  for(var key in statistics) {
+    var stat = document.createElement("h4");
+    stat.innerHTML = key;
+    stats.appendChild(stat);
+    var value = document.createElement("p");
+    value.innerHTML = statistics[key];
+    stats.appendChild(value);
+  }
+  content.appendChild(stats);
+  /*for(var key in statistics) {
+    var value = statistics[key];
+    var stat = document.createElement("div");
+    stat.classList.add("stat");
+    var name = document.createElement("h3");
+    name.innerHTML = key;
+    stat.appendChild(name);
+    var num = document.createElement("p");
+    num.innerHTML = value;
+    stat.appendChild(num);
+    content.appendChild(stat);
+  }*/
+  return content;
 }
