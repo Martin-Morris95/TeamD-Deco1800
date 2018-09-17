@@ -151,10 +151,6 @@ footer ul{
 	z-index: 1;
 }
 
-.hidden{
-	display: none;
-}
-
 .popup{
 	position: absolute;
 	z-index: 1;
@@ -190,6 +186,43 @@ footer ul{
 .popup .stats p{
 	margin-left: 5px;
 }
+
+.question{
+    background-color: #222;
+    display: inline;
+    flex-direction: row;
+    position: absolute;
+    top: 90%;
+    transform: translate(0%, -100%);
+    padding: 20px;
+}
+
+.question p{
+	margin-right: 5px;
+}
+
+.question fieldset{
+    border-width: 0px;
+}
+
+.question button{
+    background-color: #000;
+    border: none;
+    padding: 10px;
+    transition: background-color 1s;
+}
+
+.question button:hover{
+    background-color: #494949;
+}
+
+.question label::after{
+	content: "?";
+}
+
+.hidden, .template{
+	display: none;
+}
 /*End of Index-------------------------------------------------------------------*/
 
 
@@ -215,53 +248,3 @@ footer ul{
     background-color: lightcoral;
 }
 /*End of Card Gallery-------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

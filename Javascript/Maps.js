@@ -84,30 +84,30 @@ function Marker(latt, long, zoom=null, icon=null, popup=null) {
   });
   this.parent = null;
   this.popup = popup;
-  
-  var self = this;
-  //this.marker.addListener('click', this.click);
-  this.marker.addListener('click', function(event) {
-    if(self.changeZoom()) {
-      current = self;
-      updateMap(self.marker.getPosition().lat(), self.marker.getPosition().lng());
-    }
-    self.showPopup();
-    if(!self.isBottom()) {
-      if(self.parent != null) {
-        self.parent.hideChildren();
-        self.parent.hideChildrenPopups();
-      }
-      else {
-        self.hide();
-      }
-      self.showChildren();
-      showBack();
-    }
-  });
+
+  this.marker.addListener('click', this.click.bind(this));
 }
 
 Marker.prototype = Object.create(Node.prototype);
+
+Marker.prototype.click = function(event) {
+  if(this.changeZoom()) {
+    current = this;
+    updateMap(this.marker.getPosition().lat(), this.marker.getPosition().lng());
+    showBack();
+  }
+  this.showPopup();
+  if(!this.isBottom()) {
+    if(this.parent != null) {
+      this.parent.hideChildren();
+      this.parent.hideChildrenPopups();
+    }
+    else {
+      this.hide();
+    }
+    this.showChildren();
+  }
+}
 
 Marker.prototype.setParent = function(marker) {
   this.parent = marker;
@@ -143,9 +143,6 @@ Marker.prototype.hidePopup = function() {
 
 Popup = function(content, hidden=true) {
   this.content = content;
-  //this.position = position;
-  //this.content.style.left = position[0] + 'px';
-  //this.content.style.top = position[1] + 'px';
   this.content.classList.add("popup");
   document.getElementById("popups").appendChild(this.content);
   if(hidden) {
@@ -160,11 +157,48 @@ Popup.prototype.show = function() {
 Popup.prototype.hide = function() {
   this.content.classList.add("hidden");
 }
-/*
-Popup.prototype.setPosition = function(position) {
-  self.position = position;
+
+Question = function(question, answer, correct) {
+  this.question = question;
+  this.answer = answer;
+  this.correct = correct;
+  this.correct = correct;
+  
+  this.content = createQuestionContent(question, this.answerQuestion.bind(this));
+  this.content.classList.add("question");
+ // this.content.getElementsByTagName("form")[0].setAttribute("action", )
+  document.getElementById("questions").appendChild(this.content);
 }
-*/
+
+Question.prototype.answerQuestion = function() {
+  var ans = this.content.getElementsByTagName("input")[0].value;
+  if(ans == this.answer) {
+    var nextQuestion = this.correct();
+    if(nextQuestion != null) {
+      this.changeQuestion(nextQuestion[0], nextQuestion[1]);
+      this.content.getElementsByTagName("input")[0].value = "";
+    }
+    else {
+      this.content.classList.add("hidden");
+    }
+  }
+}
+
+Question.prototype.changeQuestion = function(question, answer) {
+  this.question = question;
+  this.answer = answer;
+  this.content.getElementsByTagName("label")[0].innerHTML = question;
+}
+
+function createQuestionContent(question, callback) {
+  var content = document.getElementById("questionTemplate").cloneNode(true);
+  content.removeAttribute("id");
+  content.classList.remove("template");
+  content.getElementsByTagName("label")[0].innerHTML = question;
+  content.getElementsByTagName("form")[0].addEventListener('submit', function(event) {event.preventDefault(); callback();});
+  
+  return content;
+}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), { center: {lat: 31, lng: 68},
@@ -194,42 +228,31 @@ function initMap() {
       {visibility: 'off'}
   ]}])
 
-/*
-  var content = document.createElement("p");
-  content.innerHTML = "popup";
-  var popup = new Popup([100, 100], content);  
-
-  root = new Root(8);
-  current = root;
-
-  var marker1 = new Marker(-35, 150, 10);
-  var marker2 = new Marker(-34.7, 150, 12);
-  var marker3 = new Marker(-35.1, 150.5, 13, null, popup);
-  var marker4 = new Marker(-34.71, 150.02);
-  var marker5 = new Marker(-35.5, 149, 10);
-  var marker6 = new Marker(-35.6, 148.7);
-  marker2.hide();
-  marker3.hide();
-  marker4.hide();
-  marker6.hide();
-  root.addChild(marker1);
-  marker1.addChild(marker2);
-  marker1.addChild(marker3);
-  marker2.addChild(marker4);
-  root.addChild(marker5);
-  marker5.addChild(marker6);
-*/
-
   root = new Root(2.5);
   var turkey = new Marker(39, 35, 6);
+  var france = new Marker(48, 0.8, 6);
   root.addChild(turkey);
+  root.addChild(france);
   root.changeZoom();
-  var stats = {"casualties" : "115000", "involved" : "Australia, Turkey"};
+  var stats = {"casualties" : "115000", "involved" : "Australia, Britain, New Zealand, Turkey"};
   var popupContent = createPopupContent("Gallipoli", ["Lorem Ipsum"], stats);
   var popup = new Popup(popupContent);
   var gallipoli = new Marker(40.3, 26.5, 7, null, popup);
   turkey.addChild(gallipoli);
   gallipoli.hide();
+
+  var questions = [["How many soldiers died at Gallipoli", "115000"], ["What countries were involved in Gallipoli", "Australia, Britain, New Zealand, Turkey"]];
+  var getNextQuestion = function() {
+    if(questions.length == 0) {
+      return null;
+    }
+    else {
+      return questions.shift();
+    }
+  }
+
+  var q = getNextQuestion();
+  var question = new Question(q[0], q[1], getNextQuestion);
   // and other stuff...
   $("#search #submit").click(function(event) {
     event.preventDefault();
@@ -281,20 +304,18 @@ function setMarkerFocus(marker, zoom) {
 }
 
 function createPopupContent(title, text, statistics) {
-  var content = document.createElement("div");
-  var h = document.createElement("h2");
+  var content = document.getElementById("popupTemplate").cloneNode(true);
+  content.removeAttribute("id");
+  content.classList.remove("template");
+  var h = content.getElementsByTagName("h2")[0];
   h.innerHTML = title;
-  content.appendChild(h);
+  var mainText = content.getElementsByClassName("popupText")[0];
   text.forEach(function(p) {
-    var paragraph = document.createElement("p");
+    var paragraph = document.createElement("p")
     paragraph.innerHTML = p;
-    content.appendChild(paragraph);
-  })
-  var statsH = document.createElement("h3");
-  statsH.innerHTML = "Stats";
-  content.appendChild(statsH);
-  var stats = document.createElement("div");
-  stats.classList.add("stats");
+    mainText.appendChild(paragraph);
+  });
+  var stats = content.getElementsByClassName("stats")[0];
   for(var key in statistics) {
     var stat = document.createElement("h4");
     stat.innerHTML = key;
@@ -303,18 +324,5 @@ function createPopupContent(title, text, statistics) {
     value.innerHTML = statistics[key];
     stats.appendChild(value);
   }
-  content.appendChild(stats);
-  /*for(var key in statistics) {
-    var value = statistics[key];
-    var stat = document.createElement("div");
-    stat.classList.add("stat");
-    var name = document.createElement("h3");
-    name.innerHTML = key;
-    stat.appendChild(name);
-    var num = document.createElement("p");
-    num.innerHTML = value;
-    stat.appendChild(num);
-    content.appendChild(stat);
-  }*/
   return content;
 }

@@ -59,8 +59,27 @@
 			</fieldset>
 		</form>
 
-		<div id = "popups"></div>
+		<div id = "popups">
+			<div id="popupTemplate" class="template">
+				<h2></h2>
+				<div class="popupText"></div>
+				<h3>stats</h3>
+				<div class="stats"></div>
+			</div>
+		</div>
 		<div id = "map"></div>
+		<div id = "questions" class="whiteTextLarge">
+			<div id="questionTemplate" class="template">
+				<!--<p></p>-->
+				<form>
+					<fieldset>
+						<label></label>
+						<input type="text" class="questionText">
+						<button type="submit" class="questionButton whiteTextLarge">Submit</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
         
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6yDELatMm6K5DVXRZeo4rKEsQd1MR7NU&callback=initMap"async defer></script>
         <script src= "Javascript/Maps.js"></script>
