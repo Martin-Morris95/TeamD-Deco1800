@@ -21,14 +21,26 @@ html, body {
     color:white;
     font-style: bold;
 }
+
+.link{
+    display: block;
+    text-decoration: white;
+    color:white;
+    
+ }
+
+.paddingRight{
+    padding-right: 50px;
+}
 /*---------------------------------------------------------------------------------------*/
 
 /*UI-------------------------------------------------------------------------------------*/
+
 #menu{
 	display:flex;
     align-items: center;
 	background-color:#222222;
-    overflow: auto;
+    overflow: hidden;
 	width:100%;
     height:10%;
 	
@@ -36,21 +48,22 @@ html, body {
 #logoContainer{
     display: flex;
     align-items: center
+       
 }
 
 nav{
   height: 100px;
   display:flex;
   align-items: stretch;
+  
 }
 
 #navbar ul{
 	display:flex;
 	list-style:none;
+     
 }
-#navbar li:first-of-type{
-    margin-left:50px;
-}
+
 #navbar li{
     display:block;
     background-color: black; /* Green */
@@ -60,6 +73,7 @@ nav{
     font-size: 16px;
     cursor: pointer;
     transition: background-color 1s; 
+     
 }
 
 #navbar li:hover{
@@ -72,10 +86,12 @@ nav{
 	text-decoration:none;
 	text-align:center;
 	display:block;
-    line-height: 4em;
+    line-height: 3.5em;
 	height:100%;
     color:white;
     box-sizing:border-box;
+    font-size: 20px;
+    overflow:hidden;
 }
 
 #search{
@@ -89,8 +105,6 @@ nav{
 	height: 100%;
 }
 
-
-
 footer ul{
 	list-style:none;
 }
@@ -98,28 +112,29 @@ footer ul{
 #logo{
     margin:10px;
     height:80px;
+    display:block;
 }
 
 
 .page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -142px; 
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -142px; 
 }
 .page-wrap:after {
-  content: "";
-  display: block;
+    content: "";
+    display: block;
 }
 .site-footer, .page-wrap:after {
-  height: 10%; 
+    height: 10%; 
 }
 .site-footer {
-  background: orange;
+    background: orange;
     display:flex;
-	flex-direction:row;
+    flex-direction:row;
     align-items: center;
-	justify-content:center;
-	background-color:#222222;
+    justify-content:center;
+    background-color:#222222;
  
 }
 

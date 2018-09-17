@@ -11,34 +11,49 @@
 				  crossorigin="anonymous"></script>             
 	</head>
     <body>
-        
         <header id="menu">
-			<figure id="logoContainer">
-				<img id ="logo" src="Images/Logo.png" alt="logo">
-                <h1 class = "whiteTextLarge">WORLD CONFLICT</h1>
-			</figure>
-            
-			<nav id="navbar">
+            <a class= "link" href = 'Index.html'>
+                <figure id="logoContainer">
+                    <img id ="logo" src="Images/Logo.png" alt="logo">
+                    <h1 class = "whiteTextLarge paddingRight">WORLD CONFLICT</h1>
+                 </figure>
+            </a>
+            <nav id="navbar">
                 <ul>
-					<li>
-						<a class = "whiteTextLarge" href="index.html">Home</a>
-					</li>
-					<li>
-						<a class = "whiteTextLarge" href="CardGallery.html">Card Gallery</a>
-					</li>
-				</ul>
-			</nav>
+                    <a href="index.html">
+                        <li class = "whiteTextLarge">
+                            Home
+                        </li>
+                    </a>
+                    <a href="CardGallery.html">
+                        <li class = "whiteTextLarge">
+                            Card Gallery
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+            <!--
+            <form id="search">
+                <fieldset>
+                    <label for="longitude_text">Longitude</label>
+                    <input type="text" id="longitude_text">
+                    <label for="latitude_text">Latitude</label>
+                    <input type="text" id="latitude_text">
+                    <button type="button" id="submit">Search</button>
+                </fieldset>
+            </form>
+            -->
         </header>
         
         <div id = "cardContainer" class= "page-wrap">
 
-            
+
         </div>
-        
+
         <footer class = "site-footer">
-			<p class = "whiteTextLarge">TEAM D&copy;</p>
-		</footer>
-        
+            <p class = "whiteTextLarge">TEAM D&copy;</p>
+        </footer>
+
         <script src= "Javascript/CardGalley.js"></script>
     </body>
 </html>
