@@ -1,45 +1,81 @@
+/*imports----------------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+/*end imports------------------------------------------------------------------------------*/
+
 /*CSS Doc*/
 *{
 	margin:0px;
 	padding:0px;
 }
+
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
   }
+
+/*MISC-----------------------------------------------------------------------------------*/
+.whiteTextLarge{
+    font-family: 'Rubik', sans-serif;
+    color:white;
+    font-style: bold;
+}
+/*---------------------------------------------------------------------------------------*/
+
+/*UI-------------------------------------------------------------------------------------*/
 #menu{
 	display:flex;
-	flex-direction:row;
-	justify-content:space-between;
-	background-color:#ccc;
-	/*might need to change this since it does not work in IE/Edge 15 or below*/
-	position:sticky;
-	top:0;
+    align-items: center;
+	background-color:#222222;
+    overflow: auto;
 	width:100%;
+    height:10%;
+	
+}
+#logoContainer{
+    display: flex;
+    align-items: center
+}
+
+nav{
+  height: 100px;
+  display:flex;
+  align-items: stretch;
 }
 
 #navbar ul{
 	display:flex;
-	flex-direction:row;
 	list-style:none;
-	height:100%;
-	margin:0px;
+}
+#navbar li:first-of-type{
+    margin-left:50px;
+}
+#navbar li{
+    display:block;
+    background-color: black; /* Green */
+    padding: 15px 60px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 1s; 
 }
 
-#navbar li{
-	height:100%;
-	display:block;
+#navbar li:hover{
+    
+    background-color: #494949; /* Green */
+  
 }
 
 #navbar a{
 	text-decoration:none;
 	text-align:center;
 	display:block;
+    line-height: 4em;
 	height:100%;
-	background-color:#aaa;
-	padding:5px;
-	box-sizing:border-box;
+    color:white;
+    box-sizing:border-box;
 }
 
 #search{
@@ -53,19 +89,44 @@ html, body {
 	height: 100%;
 }
 
-footer{
-	display:flex;
-	flex-direction:row;
-	justify-content:space-between;
-	background-color:#ccc;
-}
+
 
 footer ul{
 	list-style:none;
 }
 
+#logo{
+    margin:10px;
+    height:80px;
+}
+
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 10%; 
+}
+.site-footer {
+  background: orange;
+    display:flex;
+	flex-direction:row;
+    align-items: center;
+	justify-content:center;
+	background-color:#222222;
+ 
+}
+
+/*end of UI----------------------------------------------------------------------------------*/
+
+/*Index--------------------------------------------------------------------------------------*/
 #map{
-  
     height: 80%;
   
 }
@@ -114,3 +175,78 @@ footer ul{
 .popup .stats p{
 	margin-left: 5px;
 }
+/*End of Index-------------------------------------------------------------------*/
+
+
+/*Card Gallery-------------------------------------------------------------------*/
+#cardContainer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin:40px;
+    background-color: lightblue;
+}
+
+.card{
+   /* position: relative;
+    top:20px;
+      float:left;
+    */
+    
+    margin: 30px;
+    width:150px;
+    height:200px;
+    background-color: lightcoral;
+}
+/*End of Card Gallery-------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
