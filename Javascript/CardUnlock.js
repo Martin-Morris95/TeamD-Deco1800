@@ -1,15 +1,27 @@
 $(document).ready(function() {
+    $(".unlockedCard").click(function() {
+        $(".unlockedCard").toggleClass("hideCard");
+    })
+})
+
+function showCard(){
+    $(".unlockedCard").toggleClass("hideCard");
+    findCard();
+}
+
+//$(document).ready(function() {
     
     var _data;
 
     
 
-
+/*
     $(this).keypress(function(){
         $(".unlockedCard").toggleClass("hideCard");
         findCard();
     });
-    
+*/
+       
     function findCard(){
             
         var slqData = JSON.parse(localStorage.getItem("slqData"));
@@ -53,7 +65,7 @@ $(document).ready(function() {
   
          while(image == ""){
             
-            RandomCard = data.result.records[Math.random() * (data.result.records.length)];
+            RandomCard = data.result.records[Math.floor(Math.random() * (data.result.records.length))];
             image = RandomCard["Thumbnail image"];
             title = RandomCard["Title of image"];
             words = title.split(" ");
@@ -73,4 +85,4 @@ $(document).ready(function() {
          
         }
                
-});
+//});

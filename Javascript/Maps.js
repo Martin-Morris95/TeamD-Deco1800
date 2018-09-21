@@ -370,6 +370,7 @@ function correct() {
   unlockedCards.push(unlocked);
   console.log(unlocked);
   localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));*/
+  showCard();
 }
 
 function unlockCard() {
