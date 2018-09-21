@@ -36,8 +36,10 @@ $(document).ready(function() {
                      
             
             if(image !=""){
-                
-                if(id == "44" || id == "30" || id == "24" || id == "14" || id == "43"){
+                var unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
+
+                //if(id == "44" || id == "30" || id == "24" || id == "14" || id == "43"){
+                if(unlockedCards.indexOf(id) != -1){
                       $("#cardContainer").append('<div class = "card"><img class ="portrait" src = "'+image+'"></img><p class = "soldierName whiteTextLarge">'+ name+'</p></div>');
                 }else{
                     $("#cardContainer").append('<div class = "card"><img class ="portrait lockedCard" src = "'+image+'"></img><p class = "soldierName whiteTextLarge">'+ name+'</p></div>');
@@ -49,6 +51,12 @@ $(document).ready(function() {
                
         
     )};
+
+    var unlockedCards;
+    if(!localStorage.getItem("unlockedCards")){
+        unlockedCards = [44, 30, 24, 14, 43];
+        localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
+    }
 
     
   var slqData = JSON.parse(localStorage.getItem("slqData"));

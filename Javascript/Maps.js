@@ -159,11 +159,11 @@ Popup.prototype.hide = function() {
   this.content.classList.add("hidden");
 }
 
-Question = function(question, answer, correct) {
+Question = function(question, answer, getNextQuestion, correct) {
   this.question = question;
   this.answer = answer;
   this.correct = correct;
-  this.correct = correct;
+  this.getNextQuestion = getNextQuestion;
   
   this.content = createQuestionContent(question, this.answerQuestion.bind(this));
   this.content.classList.add("question");
@@ -174,7 +174,7 @@ Question = function(question, answer, correct) {
 Question.prototype.answerQuestion = function() {
   var ans = this.content.getElementsByTagName("input")[0].value;
   if(ans == this.answer) {
-    var nextQuestion = this.correct();
+    var nextQuestion = this.getNextQuestion();
     if(nextQuestion != null) {
       this.changeQuestion(nextQuestion[0], nextQuestion[1]);
       this.content.getElementsByTagName("input")[0].value = "";
@@ -182,6 +182,7 @@ Question.prototype.answerQuestion = function() {
     else {
       this.content.classList.add("hidden");
     }
+    this.correct();
   }
 }
 
@@ -253,15 +254,16 @@ function initMap() {
   }
 
   var q = getNextQuestion();
-  var question = new Question(q[0], q[1], getNextQuestion);
+  var question = new Question(q[0], q[1], getNextQuestion, correct);
   // and other stuff...
+  /*
   $("#search #submit").click(function(event) {
     event.preventDefault();
     var longitude = $("#longitude_text").val();
     var latitude = $("#latitude_text").val();
     updateMap(latitude, longitude);
     console.log("Longitude: " + $("#longitude_text").val() + "\nLatitude: " + $("#latitude_text").val());
-  });
+  });*/
 
   
   map.addListener('click', function(event) {
@@ -326,4 +328,57 @@ function createPopupContent(title, text, statistics) {
     stats.appendChild(value);
   }
   return content;
+}
+
+function correct() {
+  var unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
+  if(!unlockedCards) {
+    unlockedCards = [44, 30, 24, 14, 43];
+  }
+
+  
+  if(!localStorage.getItem("lockedCards")){
+    var data = {
+        resource_id: "cf6e12d8-bd8d-4232-9843-7fa3195cee1c"
+    }
+
+    $.ajax({
+			url: "http://data.gov.au/api/action/datastore_search",
+			data: data,
+			dataType: "jsonp", // We use "jsonp" to ensure AJAX works correctly locally (otherwise XSS).
+			cache: true,
+			success: function(data) {
+				//localStorage.setItem("slqData", JSON.stringify(data));	
+        var lockedCards = [];
+        $.each(data.result.records, function(key, value) {
+          if(unlockedCards.indexOf(value["_id"]) == -1 && value["Thumbnail image"] != "") {
+            lockedCards.push(value["_id"]);
+          }
+        })
+        localStorage.setItem("lockedCards", JSON.stringify(lockedCards));
+        unlockCard();
+			}
+		});
+  }
+  else 
+  unlockCard()
+  /*
+  var unlocked;
+  do{
+    unlocked = Math.floor(Math.random() * 54);
+  } while(unlockedCards.indexOf(unlocked) != -1)
+  unlockedCards.push(unlocked);
+  console.log(unlocked);
+  localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));*/
+}
+
+function unlockCard() {
+  lockedCards = JSON.parse(localStorage.getItem("lockedCards"));
+  unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
+  index = Math.floor(Math.random() * lockedCards.length)
+  var unlocked = lockedCards[index];
+  unlockedCards.push(unlocked);
+  lockedCards.splice(index, 1);
+  localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
+  localStorage.setItem("lockedCards", JSON.stringify(lockedCards));  
 }
