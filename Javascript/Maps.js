@@ -253,7 +253,7 @@ function initMap() {
   }
 
   var q = getNextQuestion();
-  var question = new Question(q[0], q[1], getNextQuestion, function() {console.log("question answered")});
+  var question = new Question(q[0], q[1], getNextQuestion, correct);
   // and other stuff...
   /*
   $("#search #submit").click(function(event) {
@@ -327,4 +327,57 @@ function createPopupContent(title, text, statistics) {
     stats.appendChild(value);
   }
   return content;
+}
+
+function correct() {
+  var unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
+  if(!unlockedCards) {
+    unlockedCards = [44, 30, 24, 14, 43];
+  }
+
+  
+  if(!localStorage.getItem("lockedCards")){
+    var data = {
+        resource_id: "cf6e12d8-bd8d-4232-9843-7fa3195cee1c"
+    }
+
+    $.ajax({
+			url: "http://data.gov.au/api/action/datastore_search",
+			data: data,
+			dataType: "jsonp", // We use "jsonp" to ensure AJAX works correctly locally (otherwise XSS).
+			cache: true,
+			success: function(data) {
+				//localStorage.setItem("slqData", JSON.stringify(data));	
+        var lockedCards = [];
+        $.each(data.result.records, function(key, value) {
+          if(unlockedCards.indexOf(value["_id"]) == -1 && value["Thumbnail image"] != "") {
+            lockedCards.push(value["_id"]);
+          }
+        })
+        localStorage.setItem("lockedCards", JSON.stringify(lockedCards));
+        unlockCard();
+			}
+		});
+  }
+  else 
+  unlockCard()
+  /*
+  var unlocked;
+  do{
+    unlocked = Math.floor(Math.random() * 54);
+  } while(unlockedCards.indexOf(unlocked) != -1)
+  unlockedCards.push(unlocked);
+  console.log(unlocked);
+  localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));*/
+}
+
+function unlockCard() {
+  lockedCards = JSON.parse(localStorage.getItem("lockedCards"));
+  unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
+  index = Math.floor(Math.random() * lockedCards.length)
+  var unlocked = lockedCards[index];
+  unlockedCards.push(unlocked);
+  lockedCards.splice(index, 1);
+  localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
+  localStorage.setItem("lockedCards", JSON.stringify(lockedCards));  
 }
