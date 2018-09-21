@@ -275,3 +275,28 @@ footer ul{
     width: 97%;
 }
 /*End of Card Gallery-------------------------------------------------------------------*/
+
+/*Card Pop up --------------------------------------------------------------------------*/
+/* Popup container */
+.unlockedCard{
+    display: inline;
+    position: absolute;
+    top :15%;
+    left:40%;
+    background-color: red;
+    width:20%;
+    height:70%;
+    z-index: 200;
+}
+
+.hideCard{
+    display:none !important;
+}
+
+.soldierUnlock{
+    text-align: center;
+    width:101%;
+    padding:5px;
+    background-color: #222222;
+}
+/*----------------------------------------------------------------------------------

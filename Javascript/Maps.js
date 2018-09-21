@@ -18,8 +18,9 @@ $(document).ready(function() {
       updateMap(current.getPosition().lat(), current.getPosition().lng());
     }
   })
+    
 })
-
+    
 function Node(zoom) {
   this.zoom = zoom;
   this.children = [];
