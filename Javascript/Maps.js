@@ -158,11 +158,11 @@ Popup.prototype.hide = function() {
   this.content.classList.add("hidden");
 }
 
-Question = function(question, answer, correct) {
+Question = function(question, answer, getNextQuestion, correct) {
   this.question = question;
   this.answer = answer;
   this.correct = correct;
-  this.correct = correct;
+  this.getNextQuestion = getNextQuestion;
   
   this.content = createQuestionContent(question, this.answerQuestion.bind(this));
   this.content.classList.add("question");
@@ -173,7 +173,7 @@ Question = function(question, answer, correct) {
 Question.prototype.answerQuestion = function() {
   var ans = this.content.getElementsByTagName("input")[0].value;
   if(ans == this.answer) {
-    var nextQuestion = this.correct();
+    var nextQuestion = this.getNextQuestion();
     if(nextQuestion != null) {
       this.changeQuestion(nextQuestion[0], nextQuestion[1]);
       this.content.getElementsByTagName("input")[0].value = "";
@@ -181,6 +181,7 @@ Question.prototype.answerQuestion = function() {
     else {
       this.content.classList.add("hidden");
     }
+    this.correct();
   }
 }
 
@@ -252,15 +253,16 @@ function initMap() {
   }
 
   var q = getNextQuestion();
-  var question = new Question(q[0], q[1], getNextQuestion);
+  var question = new Question(q[0], q[1], getNextQuestion, function() {console.log("question answered")});
   // and other stuff...
+  /*
   $("#search #submit").click(function(event) {
     event.preventDefault();
     var longitude = $("#longitude_text").val();
     var latitude = $("#latitude_text").val();
     updateMap(latitude, longitude);
     console.log("Longitude: " + $("#longitude_text").val() + "\nLatitude: " + $("#latitude_text").val());
-  });
+  });*/
 
   
   map.addListener('click', function(event) {
