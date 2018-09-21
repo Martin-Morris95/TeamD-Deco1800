@@ -184,6 +184,9 @@ Question.prototype.answerQuestion = function() {
     }
     this.correct();
   }
+  else {
+    alert("Incorrect");
+  }
 }
 
 Question.prototype.changeQuestion = function(question, answer) {
@@ -235,13 +238,29 @@ function initMap() {
   var france = new Marker(48, 0.8, 6);
   root.addChild(turkey);
   root.addChild(france);
-  root.changeZoom();
   var stats = {"casualties" : "115000", "involved" : "Australia, Britain, New Zealand, Turkey"};
   var popupContent = createPopupContent("Gallipoli", ["Lorem Ipsum"], stats);
   var popup = new Popup(popupContent);
   var gallipoli = new Marker(40.3, 26.5, 7, null, popup);
+  var marker1 = new Marker(50, 50, 6);
+  var marker2 = new Marker(51, 49.5);
+  marker2.hide();
+  marker1.addChild(marker2);
+  var marker3 = new Marker(49, 49.2);
+  marker3.hide()
+  marker1.addChild(marker3);
+  root.addChild(marker1);
+  var marker4 = new Marker(65, 45, 6);
+  root.addChild(marker4);
+  var marker5 = new Marker(63, 49.6);
+  marker5.hide();
+  marker4.addChild(marker5);
+  var marker6 = new Marker(67, 50);
+  marker6.hide();
+  marker4.addChild(marker6);
   turkey.addChild(gallipoli);
   gallipoli.hide();
+  root.changeZoom();
 
   var questions = [["How many soldiers died at Gallipoli", "115000"], ["What countries were involved in Gallipoli", "Australia, Britain, New Zealand, Turkey"]];
   var getNextQuestion = function() {
