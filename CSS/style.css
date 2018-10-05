@@ -155,7 +155,7 @@ footer ul{
 #back{
 	position: fixed;
     z-index: 1;
-    #background-color: #222;
+    background-color: #222;
 }
 
 #back fieldset{
@@ -238,6 +238,49 @@ footer ul{
 
 .hidden, .template{
 	display: none;
+}
+
+#timeline{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+#timeline p{
+    padding: 20px;
+    transition: transform 0.25s ease;
+}
+
+#timeline p:nth-child(1){
+    background-color: orange;
+}
+
+#timeline p:nth-child(2){
+    background-color: yellow;
+}
+
+#timeline p:nth-child(3){
+    background-color: green;
+}
+
+#timeline p:nth-child(4){
+    background-color: blue;
+}
+
+#timeline p:nth-child(5){
+    background-color: darkslategray;
+}
+
+#timeline .current{
+    border: 2px solid black;
+    transform: translate(0, -5%) scaleY(1.1);
+}
+
+#timeline p:hover:not(.current){
+    transform: translate(0, -10%);
 }
 /*End of Index-------------------------------------------------------------------*/
 

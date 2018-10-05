@@ -31,18 +31,18 @@ function showCard(){
         }else{
             var data = {
                 resource_id: "cf6e12d8-bd8d-4232-9843-7fa3195cee1c",
-        }
-
-        $.ajax({
-            url: "https://data.gov.au/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22cf6e12d8-bd8d-4232-9843-7fa3195cee1c%22%20WHERE%20%22_id%22%20%3C62",
-            data: data,
-            dataType: "jsonp", // We use "jsonp" to ensure AJAX works correctly locally (otherwise XSS).
-            cache: true,
-            success: function(data) {
-                localStorage.setItem("slqData", JSON.stringify(data));	
-                populateCard(data);
             }
-        });
+
+            $.ajax({
+                url: "https://data.gov.au/api/3/action/datastore_search_sql?sql=SELECT%20*%20from%20%22cf6e12d8-bd8d-4232-9843-7fa3195cee1c%22%20WHERE%20%22_id%22%20%3C62",
+                data: data,
+                dataType: "jsonp", // We use "jsonp" to ensure AJAX works correctly locally (otherwise XSS).
+                cache: true,
+                success: function(data) {
+                    localStorage.setItem("slqData", JSON.stringify(data));	
+                    populateCards(data);
+                }
+            });
         }
     
     }

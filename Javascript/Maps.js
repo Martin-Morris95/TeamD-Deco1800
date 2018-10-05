@@ -18,12 +18,19 @@ $(document).ready(function() {
       updateMap(current.getPosition().lat(), current.getPosition().lng());
     }
   })
-    
+  $("#timeline p").click(function() {
+    $(".current").removeClass("current");
+    $(this).addClass("current");
+    root.setCurrentYear($(this).text());
+    current.showChildren();
+  })
 })
     
 function Node(zoom) {
   this.zoom = zoom;
   this.children = [];
+  this.year = null;
+  this.currentYear = 1914;
 }
 
 Node.prototype.addChild = function(marker) {
@@ -65,6 +72,13 @@ Node.prototype.isBottom = function() {
   return this.children.length == 0;
 }
 
+Node.prototype.setCurrentYear = function(year) {
+  this.currentYear = year;
+  this.children.forEach(function(child) {
+    child.setCurrentYear(year);
+  })
+}
+
 function Root(zoom) {
   Node.call(this, zoom);
 }
@@ -75,7 +89,7 @@ Root.prototype.isRoot = function() {
   return true;
 }
 
-function Marker(latt, long, zoom=null, icon=null, popup=null) {
+function Marker(latt, long,  year = null, zoom=null, icon=null, popup=null) {
   Node.call(this, zoom);
 
   this.marker = new google.maps.Marker({
@@ -85,6 +99,7 @@ function Marker(latt, long, zoom=null, icon=null, popup=null) {
   });
   this.parent = null;
   this.popup = popup;
+  this.year = year;
 
   this.marker.addListener('click', this.click.bind(this));
 }
@@ -123,7 +138,10 @@ Marker.prototype.hide = function() {
 }
 
 Marker.prototype.show = function() {
-  this.marker.setMap(map);
+  if(this.year == null || this.year == this.currentYear)
+    this.marker.setMap(map);
+  else
+    this.marker.setMap(null);
 }
 
 Marker.prototype.getPosition = function() {
@@ -430,15 +448,15 @@ function initMap() {
   map.set('styles', s[styleNo])
  
   root = new Root(2.5);
-  var turkey = new Marker(39, 35, 6);
-  var france = new Marker(48, 0.8, 6);
+  var turkey = new Marker(39, 35, null, 6);
+  var france = new Marker(48, 0.8, null, 6);
   root.addChild(turkey);
   root.addChild(france);
   var stats = {"casualties" : "115000", "involved" : "Australia, Britain, New Zealand, Turkey"};
   var popupContent = createPopupContent("Gallipoli", ["Lorem Ipsum"], stats);
   var popup = new Popup(popupContent);
-  var gallipoli = new Marker(40.3, 26.5, 7, null, popup);
-  var marker1 = new Marker(50, 50, 6);
+  var gallipoli = new Marker(40.3, 26.5, 1914, 7, null, popup);
+  var marker1 = new Marker(50, 50, null, 6);
   var marker2 = new Marker(51, 49.5);
   marker2.hide();
   marker1.addChild(marker2);
@@ -446,21 +464,26 @@ function initMap() {
   marker3.hide()
   marker1.addChild(marker3);
   root.addChild(marker1);
-  var marker4 = new Marker(65, 45, 6);
+  var marker4 = new Marker(65, 45, null, 6);
   root.addChild(marker4);
-  var marker5 = new Marker(63, 49.6);
+  var marker5 = new Marker(63, 49.6, 1918, null, null, null);
   marker5.hide();
   marker4.addChild(marker5);
-  var marker6 = new Marker(67, 50);
+  var marker6 = new Marker(67, 50, 1917);
   marker6.hide();
   marker4.addChild(marker6);
   turkey.addChild(gallipoli);
   gallipoli.hide();
+  marker7 = new Marker(41, 35, 1915);
+  turkey.addChild(marker7);
+  marker7.hide();
   root.changeZoom();
 
   var questions = [["How many soldiers died at Gallipoli", "115000"], ["What countries were involved in Gallipoli", "Australia, Britain, New Zealand, Turkey"]];
+
   var getNextQuestion = function() {
     if(questions.length == 0) {
+      console.log("no questions left");
       return null;
     }
     else {
@@ -549,6 +572,7 @@ function correct() {
   var unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
   if(!unlockedCards) {
     unlockedCards = [44, 30, 24, 14, 43];
+    localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
   }
 
   
@@ -572,11 +596,13 @@ function correct() {
         })
         localStorage.setItem("lockedCards", JSON.stringify(lockedCards));
         unlockCard();
+        showCard();
 			}
 		});
+  } else {
+    unlockCard();
+    showCard();
   }
-  else 
-  unlockCard()
   /*
   var unlocked;
   do{
@@ -585,7 +611,6 @@ function correct() {
   unlockedCards.push(unlocked);
   console.log(unlocked);
   localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));*/
-  showCard();
 }
 
 function unlockCard() {
@@ -598,6 +623,7 @@ function unlockCard() {
   localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
   localStorage.setItem("lockedCards", JSON.stringify(lockedCards));  
 }
+
 
 $(document).keypress(function(event) {
     if(event.which == 49){
