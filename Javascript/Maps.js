@@ -2,7 +2,7 @@ var markers = [];
 var map;
 var root;
 var current;
-
+var styleNo = 0;
 $(document).ready(function() {
   $("#back_button").click(function() {
     current.hideChildren();
@@ -207,9 +207,10 @@ function createQuestionContent(question, callback) {
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), { center: {lat: 31, lng: 68},
-          zoom: 8, disableDefaultUI: true, mapTypeId: 'terrain'});
+          zoom: 8, disableDefaultUI: true, mapTypeId: 'terrain',zoomControl: false,
+          scaleControl: false,scrollwheel: false,disableDoubleClickZoom: true,});
 
-  map.set('styles', [{
+  var originalStyle = [{
     featureType: 'all',
     elementType: 'labels',
     stylers: [
@@ -231,8 +232,203 @@ function initMap() {
     elementType: 'geometry',
     stylers: [
       {visibility: 'off'}
-  ]}])
+  ]}] 
+  
+  var vintageStyle =[
+    {
+        "featureType": "all",
+        "elementType": "all",
+        "stylers": [{"color": "#ff7000"},{"lightness": "69"},{"saturation": "100"},
+                    {"weight": "1.17"},{"gamma": "2.04"}
+        ]
+    },  
+    {
+        featureType: 'all',
+        elementType: 'labels',
+        stylers: [{visibility: 'off'}
+    ]
+    }, 
+    {
+        featureType: 'administrative.country',
+        elementType: 'labels',
+        stylers: [{visibility: 'on'}
+    ]
+    },
+    {
+        featureType: 'road',
+        styles: [{visibility: 'off'}
+    ]
+    },  
+    {
+        "featureType": "all",
+        "elementType": "geometry",
+        "stylers": [{"color": "#cb8536"}
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels",
+        "stylers": [{"color": "#ffb471"},{"lightness": "66"},{"saturation": "100"}
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [{"gamma": 0.01},{"lightness": 20}
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [{"saturation": -31},{"lightness": -33},{"weight": 2},{"gamma": 0.8}
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [{"visibility": "off"}
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [{"lightness": "-8"},{"gamma": "0.98"},{"weight": "2.45"},{"saturation": "26"}
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [{"lightness": 30},{"saturation": 30}
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{"saturation": 20}
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{"lightness": 20},{"saturation": -20}
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {"lightness": 10},{"saturation": -30}
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [{"saturation": 25},{"lightness": 25}
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [{"lightness": -20},{"color": "#ecc080"}
+        ]
+    }]
 
+  var retroStyle =[
+    {
+        "featureType": "administrative",
+        "stylers": [{"visibility": "off"}
+        ]
+    },  
+    {
+        featureType: 'all',
+        elementType: 'labels',
+        stylers: [
+          {visibility: 'off'}
+        ]
+    }, 
+    {
+        featureType: 'administrative.country',
+        elementType: 'labels',
+        stylers: [
+          {visibility: 'on'}
+        ]
+    }, 
+    {
+        featureType: 'road',
+        styles: [
+          {visibility: 'off'}
+        ]
+    }, 
+    {
+        featureType: 'administrative',
+        elementType: 'geometry',
+        stylers: [
+          {visibility: 'off'}
+        ]
+    },      
+    {
+        "featureType": "poi",
+        "stylers": [{"visibility": "simplified"}
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {"visibility": "simplified"}
+        ]
+    },
+    {
+        "featureType": "water",
+        "stylers": [{"visibility": "simplified"}
+        ]
+    },
+    {
+        "featureType": "transit",
+        "stylers": [{"visibility": "simplified"}
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "stylers": [{"visibility": "simplified"}
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "stylers": [{"visibility": "off"}
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "stylers": [{"visibility": "on"}
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [{"visibility": "on"}
+        ]
+    },
+    {
+        "featureType": "water",
+        "stylers": [{"color": "#84afa3"},{"lightness": 52}
+        ]
+    },
+    {
+        "stylers": [{"saturation": -17},{"gamma": 0.36}
+        ]
+    },
+    {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [{"color": "#3f518c"}
+        ]
+    }]
+  
+  var s = [originalStyle, vintageStyle, retroStyle]
+      
+  map.set('styles', s[styleNo])
+ 
   root = new Root(2.5);
   var turkey = new Marker(39, 35, 6);
   var france = new Marker(48, 0.8, 6);
@@ -402,3 +598,18 @@ function unlockCard() {
   localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
   localStorage.setItem("lockedCards", JSON.stringify(lockedCards));  
 }
+
+$(document).keypress(function(event) {
+    if(event.which == 49){
+        styleNo = 0;
+        initMap();
+    }else if(event.which == 50){
+        styleNo = 1;
+        initMap();
+    }else if(event.which == 51){
+        styleNo = 2;
+        initMap();
+        
+    }
+  
+});
