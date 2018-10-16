@@ -1,3 +1,4 @@
+var serverSide = true;
 var markers = [];
 var map;
 var root;
@@ -21,7 +22,7 @@ $(document).ready(function() {
   $("#timeline p").click(function() {
     $(".current").removeClass("current");
     $(this).addClass("current");
-    root.setCurrentYear($(this).text());
+    root.setCurrentYear(parseInt($(this).text()));
     current.showChildren();
   })
 })
@@ -29,7 +30,7 @@ $(document).ready(function() {
 function Node(zoom) {
   this.zoom = zoom;
   this.children = [];
-  this.year = null;
+  this.year = [];
   this.currentYear = 1914;
 }
 
@@ -89,7 +90,7 @@ Root.prototype.isRoot = function() {
   return true;
 }
 
-function Marker(latt, long,  year = null, zoom=null, icon=null, popup=null) {
+function Marker(latt, long,  year = [], zoom=null, icon=null, popup=null) {
   Node.call(this, zoom);
 
   this.marker = new google.maps.Marker({
@@ -138,7 +139,7 @@ Marker.prototype.hide = function() {
 }
 
 Marker.prototype.show = function() {
-  if(this.year == null || this.year == this.currentYear)
+  if(this.year.length == 0 || this.year.indexOf(this.currentYear) >= 0)
     this.marker.setMap(map);
   else
     this.marker.setMap(null);
@@ -158,6 +159,10 @@ Marker.prototype.hidePopup = function() {
   if(this.popup != null) {
     this.popup.hide();
   }
+}
+
+Marker.prototype.addYear = function(year) {
+  this.year.push(year);
 }
 
 Popup = function(content, hidden=true) {
@@ -446,38 +451,64 @@ function initMap() {
   var s = [originalStyle, vintageStyle, retroStyle]
       
   map.set('styles', s[styleNo])
- 
-  root = new Root(2.5);
-  var turkey = new Marker(39, 35, null, 6);
-  var france = new Marker(48, 0.8, null, 6);
-  root.addChild(turkey);
-  root.addChild(france);
-  var stats = {"casualties" : "115000", "involved" : "Australia, Britain, New Zealand, Turkey"};
-  var popupContent = createPopupContent("Gallipoli", ["Lorem Ipsum"], stats);
-  var popup = new Popup(popupContent);
-  var gallipoli = new Marker(40.3, 26.5, 1914, 7, null, popup);
-  var marker1 = new Marker(50, 50, null, 6);
-  var marker2 = new Marker(51, 49.5);
-  marker2.hide();
-  marker1.addChild(marker2);
-  var marker3 = new Marker(49, 49.2);
-  marker3.hide()
-  marker1.addChild(marker3);
-  root.addChild(marker1);
-  var marker4 = new Marker(65, 45, null, 6);
-  root.addChild(marker4);
-  var marker5 = new Marker(63, 49.6, 1918, null, null, null);
-  marker5.hide();
-  marker4.addChild(marker5);
-  var marker6 = new Marker(67, 50, 1917);
-  marker6.hide();
-  marker4.addChild(marker6);
-  turkey.addChild(gallipoli);
-  gallipoli.hide();
-  marker7 = new Marker(41, 35, 1915);
-  turkey.addChild(marker7);
-  marker7.hide();
-  root.changeZoom();
+
+
+  /*
+  var pathCoords = [
+    {lat: -30, lng: 115},
+    {lat: 15, lng: 55}
+  ];
+
+  var path = new google.maps.Polyline({
+    path: pathCoords,
+    geodesic: true,
+    strokeColor: '#000000',
+    strokeOpacity: 1,
+    strokeWidth: 3
+  });
+  path.setMap(map);
+ */
+  if(serverSide) {
+    getMarkers();
+  } else {
+    root = new Root(2.5);
+    var turkey = new Marker(39, 35, [1914,1915], 6);
+    var france = new Marker(48, 0.8, [], 6);
+    root.addChild(turkey);
+    root.addChild(france);
+    var stats = {"casualties" : "115000", "involved" : "Australia, Britain, New Zealand, Turkey"};
+    var popupContent = createPopupContent("Gallipoli", ["Lorem Ipsum"], stats);
+    var popup = new Popup(popupContent);
+    var gallipoli = new Marker(40.3, 26.5, [1914], 7, null, popup);
+    var marker1 = new Marker(50, 50, [], 6);
+    var marker2 = new Marker(51, 49.5);
+    marker2.hide();
+    marker1.addChild(marker2);
+    var marker3 = new Marker(49, 49.2);
+    marker3.hide()
+    marker1.addChild(marker3);
+    root.addChild(marker1);
+    var marker4 = new Marker(65, 45, [1917,1918], 6);
+    root.addChild(marker4);
+    var marker5 = new Marker(63, 49.6, [1918], null, null, null);
+    marker5.hide();
+    marker4.addChild(marker5);
+    var marker6 = new Marker(67, 50, [1917]);
+    marker6.hide();
+    marker4.addChild(marker6);
+    turkey.addChild(gallipoli);
+    gallipoli.hide();
+    marker7 = new Marker(41, 35, [1915]);
+    turkey.addChild(marker7);
+    marker7.hide();
+  //this causes problems
+  //marker8 = new Marker(45, 42, 1916);
+  //france.addChild(marker8);
+  //marker8.hide();
+    root.changeZoom();
+    root.showChildren();
+    current = root
+  }
 
   var questions = [["How many soldiers died at Gallipoli", "115000"], ["What countries were involved in Gallipoli", "Australia, Britain, New Zealand, Turkey"]];
 
@@ -551,11 +582,21 @@ function createPopupContent(title, text, statistics) {
   var h = content.getElementsByTagName("h2")[0];
   h.innerHTML = title;
   var mainText = content.getElementsByClassName("popupText")[0];
-  text.forEach(function(p) {
-    var paragraph = document.createElement("p")
+  var handleText = function(p) {
+    var paragraph = document.createElement("p");
     paragraph.innerHTML = p;
     mainText.appendChild(paragraph);
-  });
+  }
+  if(text instanceof Array) {
+    text.forEach(handleText);
+  } else {
+    handleText(text);
+  }
+/*  text.forEach(function(p) {
+    var paragraph = document.createElement("p");
+    paragraph.innerHTML = p;
+    mainText.appendChild(paragraph);
+  });*/
   var stats = content.getElementsByClassName("stats")[0];
   for(var key in statistics) {
     var stat = document.createElement("h4");
@@ -582,7 +623,7 @@ function correct() {
     }
 
     $.ajax({
-			url: "http://data.gov.au/api/action/datastore_search",
+			url: "https://data.gov.au/api/action/datastore_search",
 			data: data,
 			dataType: "jsonp", // We use "jsonp" to ensure AJAX works correctly locally (otherwise XSS).
 			cache: true,
@@ -639,3 +680,39 @@ $(document).keypress(function(event) {
     }
   
 });
+
+function getMarkers() {
+  $.ajax({
+    url: "php/markers.php",
+    dataType: "json",
+    cache: true,
+    success: function(data) {
+      root = new Root(2.5);
+      data.country.forEach(function(country) {
+        var tempCountry = new Marker(parseFloat(country.latitude), parseFloat(country.longitude), [], 6);
+        root.addChild(tempCountry);
+
+        var handleBattle = function(battle) {
+          var stats = {};
+          stats["casualties"] = battle.casualties || "unknown";
+          var popupContent = createPopupContent(battle.name, battle.text || [], stats);
+          var popup = new Popup(popupContent);
+          var year = parseInt(battle.year);
+          var tempBattle = new Marker(parseFloat(battle.latitude), parseFloat(battle.longitude), [year], 7, null, popup);
+          tempBattle.hide();
+          tempCountry.addChild(tempBattle);
+          tempCountry.addYear(year);
+        };
+
+        if(country.markers.battle instanceof Array) {
+          country.markers.battle.forEach(handleBattle);
+        } else {
+          handleBattle(country.markers.battle);
+        }
+      });
+      root.changeZoom();
+      root.showChildren();
+      current = root;
+    }
+  })
+}

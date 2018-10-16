@@ -70,7 +70,7 @@ $(document).ready(function() {
 		}
 
 		$.ajax({
-			url: "http://data.gov.au/api/action/datastore_search",
+			url: "https://data.gov.au/api/action/datastore_search",
 			data: data,
 			dataType: "jsonp", // We use "jsonp" to ensure AJAX works correctly locally (otherwise XSS).
 			cache: true,
