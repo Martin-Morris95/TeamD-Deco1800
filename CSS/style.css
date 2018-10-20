@@ -210,7 +210,7 @@ footer ul{
     position: absolute;
     top: 100%;
     transform: translate(0%, -100%);
-    padding: 12px;
+    padding: 25px;
 }
 
 .question p{
@@ -258,33 +258,33 @@ footer ul{
 }
 
 #timeline p:nth-child(1){
-    background-color: orange;
+    background-color: #222222;
     border-top-left-radius: 20%;
     border-bottom-left-radius: 20%;
 }
 
 #timeline p:nth-child(2){
-    background-color: yellow;
+    background-color: white;
 }
 
 #timeline p:nth-child(3){
-    background-color: green;
+    background-color: #222222;
 }
 
 #timeline p:nth-child(4){
-    background-color: blue;
+    background-color: white;
 }
 
 #timeline p:nth-child(5){
-    background-color: darkslategray;
+    background-color: #222222;
     border-top-right-radius: 20%;
     border-bottom-right-radius: 20%;
 }
 
 #timeline .current{
-    border: 1.5px solid black;
+    border: 3px solid black;
     /*transform: translate(0, 0%) scaleY(1.1);*/
-    height:12px; 
+    height:20px; 
 }
 
 #timeline p:hover:not(.current){

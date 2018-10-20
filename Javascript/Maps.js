@@ -1,9 +1,10 @@
-var serverSide = true;
+var serverSide = false;
 var markers = [];
 var map;
 var root;
 var current;
-var styleNo = 0;
+
+
 $(document).ready(function() {
   $("#back_button").click(function() {
     current.hideChildren();
@@ -233,129 +234,7 @@ function initMap() {
           zoom: 8, disableDefaultUI: true, mapTypeId: 'terrain',zoomControl: false,
           scaleControl: false,scrollwheel: false,disableDoubleClickZoom: true,});
 
-  var originalStyle = [{
-    featureType: 'all',
-    elementType: 'labels',
-    stylers: [
-      {visibility: 'off'}
-    ]
-  }, {
-    featureType: 'administrative.country',
-    elementType: 'labels',
-    stylers: [
-      {visibility: 'on'}
-    ]
-  }, {
-    featureType: 'road',
-    styles: [
-      {visibility: 'off'}
-    ]
-  }, {
-    featureType: 'administrative',
-    elementType: 'geometry',
-    stylers: [
-      {visibility: 'off'}
-  ]}] 
   
-  var vintageStyle =[
-    {
-        "featureType": "all",
-        "elementType": "all",
-        "stylers": [{"color": "#ff7000"},{"lightness": "69"},{"saturation": "100"},
-                    {"weight": "1.17"},{"gamma": "2.04"}
-        ]
-    },  
-    {
-        featureType: 'all',
-        elementType: 'labels',
-        stylers: [{visibility: 'off'}
-    ]
-    }, 
-    {
-        featureType: 'administrative.country',
-        elementType: 'labels',
-        stylers: [{visibility: 'on'}
-    ]
-    },
-    {
-        featureType: 'road',
-        styles: [{visibility: 'off'}
-    ]
-    },  
-    {
-        "featureType": "all",
-        "elementType": "geometry",
-        "stylers": [{"color": "#cb8536"}
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels",
-        "stylers": [{"color": "#ffb471"},{"lightness": "66"},{"saturation": "100"}
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.text.fill",
-        "stylers": [{"gamma": 0.01},{"lightness": 20}
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.text.stroke",
-        "stylers": [{"saturation": -31},{"lightness": -33},{"weight": 2},{"gamma": 0.8}
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.icon",
-        "stylers": [{"visibility": "off"}
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [{"lightness": "-8"},{"gamma": "0.98"},{"weight": "2.45"},{"saturation": "26"}
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [{"lightness": 30},{"saturation": 30}
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [{"saturation": 20}
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [{"lightness": 20},{"saturation": -20}
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry",
-        "stylers": [
-            {"lightness": 10},{"saturation": -30}
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [{"saturation": 25},{"lightness": 25}
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [{"lightness": -20},{"color": "#ecc080"}
-        ]
-    }]
-
   var retroStyle =[
     {
         "featureType": "administrative",
@@ -448,9 +327,9 @@ function initMap() {
         ]
     }]
   
-  var s = [originalStyle, vintageStyle, retroStyle]
+ 
       
-  map.set('styles', s[styleNo])
+  map.set('styles', retroStyle);
 
 
   /*
@@ -510,7 +389,38 @@ function initMap() {
     current = root
   }
 
-  var questions = [["How many soldiers died at Gallipoli", "115000"], ["What countries were involved in Gallipoli", "Australia, Britain, New Zealand, Turkey"]];
+  var questions = [
+      ["How many soldiers died at Gallipoli", "115000"], 
+      ["What countries were involved in Gallipoli", "Australia, Britain, New Zealand, Turkey"],
+      ["How Many casualties were there in the battle of Rabaul, Papua New Guinea", "6"],
+      ["Why were Australians sent to Papa New Guinea?, Papua New Guinea", "To occupy the New Guineas colonies"],
+      ["At what rate were soldiers evacuated from Gallipoli on a weekly basis","10%"],
+      ["What were the name of the rifles soldiers used to confuse the enemy (Gallipoli)","Drip rifles"],
+      ["Which soldier that fought at Gallipoli invented the periscope rifle (Gallipoli)","Lance Corporal William Beech"],
+      ["Was Gallipoli Australia’s first major battle","Yes"],
+      ["How Many casualties were there in the battle of Pine, Israel","2000"],
+      ["What date did the battle of 1915 Pine, Israel take place","6th of August "],
+      ["What time did the Australians use artillery bombardment in Israel against Turkish positions","4:30pm"],
+      ["How Many casualties were there in the battle of Nek, Israel, 1915","234"],
+      ["What animals were used in the battle of Nek, Israel 1915","Horses"],
+      ["What was the Australian brigade called in the battle of Nek, Israel 1915","3rd Light Horse Brigade"],
+      ["How Many casualties were there in the battle of Suez Canal, Egypt 1916","190"],
+      ["What date did the Turkish forces attack at the battle of Suez Canal, Egypt 1916","2nd of Feburary"],
+      ["What were the Light Horses called by the Arabs (Suez Canal, Egypt 1916)","The Kings of the Feathers"],
+      ["How Many casualties were there in the battle of Romani, Sinai Peninsula Egypt, 1916","8"],
+      ["What Countries advance was stopped by the Australian soldiers in the battle of Romani, Sinai Peninsula Egypt, 1916","Turkey"],
+      ["What date did the Ottoman troops attack in the battle of Romani, Sinai Peninsula Egypt, 1916", "4th of August"],
+      ["How Many casualties were there in the battle of Hamel, France, 1918","250"],
+      ["How Many casualties were there in the battle of Mont St Quentin, France, 1918","12187"],
+      ["How Many casualties were there in the battle of Dernancourt, France, 1918","137"],
+      ["How Many casualties were there in the battle of Villers-Bretonneux, France, 1918","2400"],
+      ["How Many casualties were there in the battle of Montbrehain, France, 1918","430"],
+      ["How Many casualties were there in the battle of Gaza, Israel, 1917","32"],
+      ["What were used for the first time in the middle east in the battle of Gaza, Israel, 1917","Tanks"],
+      ["What time did the Australian troops attack in the battle of Montbrehain, France, 1918","6:05am"],
+      ["What town did the Germans capture in the battle of Villers-Bretonneux, France, 1918","Villers-Bretonneux"],
+      ["Who captured the town of Peronne France in 1918","The ANZACs"]
+  ];
 
   var getNextQuestion = function() {
     if(questions.length == 0) {
@@ -518,10 +428,18 @@ function initMap() {
       return null;
     }
     else {
+      shuffleArray(questions);
       return questions.shift();
     }
   }
 
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // eslint-disable-line no-param-reassign
+    }
+  }   
+  
   var q = getNextQuestion();
   var question = new Question(q[0], q[1], getNextQuestion, correct);
   // and other stuff...
@@ -666,20 +584,6 @@ function unlockCard() {
 }
 
 
-$(document).keypress(function(event) {
-    if(event.which == 49){
-        styleNo = 0;
-        initMap();
-    }else if(event.which == 50){
-        styleNo = 1;
-        initMap();
-    }else if(event.which == 51){
-        styleNo = 2;
-        initMap();
-        
-    }
-  
-});
 
 function getMarkers() {
   $.ajax({
