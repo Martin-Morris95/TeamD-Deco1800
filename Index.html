@@ -69,7 +69,31 @@
 		</div>
 		<div id = "map">      
         </div>
-         <div class = "unlockedCard hideCard"></div>
+        
+        <div class = "unlockedCard hideCard"></div>
+        
+        <div id = "filterButtons">
+           <div class="wrap">
+               <p class = "centerText whiteTextLarge"><strong>Data Filter</strong></p>
+              <div class="block">
+                <span>BATTLES</span>
+                <input class = "toggleInput" data-index="0" id="battles" type="checkbox" />
+                <label class="toggleLabel" for="battles"></label>
+              </div>
+              <div class="block">
+                <span>DEPLOYMENT</span>
+                <input  class = "toggleInput" data-index="1" id="deployment" type="checkbox" />
+                <label class="toggleLabel" for="deployment"></label>
+              </div>
+              <div class="block">
+                <span>TERRITORIES</span>
+                <input class = "toggleInput" data-index="2" id="territories" type="checkbox" />
+                <label class="toggleLabel" for="territories"></label>
+              </div>
+            </div>
+               
+        </div>
+        
 		<div id = "questions" class="whiteTextLarge">
 			<div id="questionTemplate" class="template">
 				<!--<p></p>-->
@@ -82,15 +106,16 @@
 				</form>
 			</div>
 		</div>
-		<div id = "timeline">
-			<p class="current whiteTextLarge">1914</p>
-			<p class = "blackTextLarge">1915</p>
-			<p class = "whiteTextLarge">1916</p>
-			<p class = "blackTextLarge">1917</p>
-			<p class = "whiteTextLarge">1918</p>
-		</div>
         
-
+        
+        <div id = "timeline">
+            <p class="current blackTextLarge"><strong>1914</strong></p>
+            <p class = "blackTextLarge"><strong>1915</strong></p>
+            <p class = "blackTextLarge"><strong>1916</strong></p>
+            <p class = "blackTextLarge"><strong>1917</strong></p>
+            <p class = "blackTextLarge"><strong>1918</strong></p>
+        </div>
+      
               
         
 		<script src ="Javascript/CardUnlock.js"></script>

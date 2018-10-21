@@ -38,6 +38,12 @@ html, body {
 .paddingRight{
     padding-right: 50px;
 }
+
+.centerText{
+    text-align: center;
+    padding:20px;
+    font-size: 30px;
+}
 /*---------------------------------------------------------------------------------------*/
 
 /*UI-------------------------------------------------------------------------------------*/
@@ -247,6 +253,9 @@ footer ul{
     top: 85%;
     left: 50%;
     transform: translate(-50%, -100%);
+    padding: 10px 10px 5px 10px;
+    background-color: rgba(53,53,53,0.5);
+    border-radius: 10px;
 }
 
 #timeline p{
@@ -258,38 +267,121 @@ footer ul{
 }
 
 #timeline p:nth-child(1){
-    background-color: #222222;
+    background-color: #F1E4DB;
     border-top-left-radius: 20%;
     border-bottom-left-radius: 20%;
 }
 
 #timeline p:nth-child(2){
-    background-color: white;
+    background-color: #D7C9BE;
 }
 
 #timeline p:nth-child(3){
-    background-color: #222222;
+    background-color: #8B775F;
 }
 
 #timeline p:nth-child(4){
-    background-color: white;
+    background-color: #9AA582;
 }
 
 #timeline p:nth-child(5){
-    background-color: #222222;
+    background-color: #657359;
     border-top-right-radius: 20%;
     border-bottom-right-radius: 20%;
 }
 
 #timeline .current{
-    border: 3px solid black;
+    border: 3px solid red;
     /*transform: translate(0, 0%) scaleY(1.1);*/
     height:20px; 
+   
 }
 
 #timeline p:hover:not(.current){
-    /*transform: translate(0, -10%);*/
+     cursor:pointer;
 }
+
+#timelineContainer{
+    padding:10px;
+    width:50%;
+    background-color: red;
+}
+
+/*Toggle Buttons------------------------------------------------------------------*/
+
+.toggleInput{
+  display:none;  
+}
+.block{
+  width:200px;
+  position:relative;
+  clear:both;
+  margin:0 0 25px;
+  float: left;
+}
+span{
+  text-transform:uppercase;
+  font-family: 'Rubik', sans-serif;
+  font-weight:bold;
+  font-size:15px;
+  float:right;
+  width:140px;
+  margin:5px 0 0;
+ color:white;
+}
+.wrap{
+  width:200px;
+  position: absolute;
+  right:0%;
+  top:0%;
+ 
+  padding:10px;
+  background-color: rgba(53,53,53,0.5);
+ border-radius: 20%;
+}
+.toggleLabel{
+  width:50px;
+  height:30px;
+  box-sizing:border-box;
+  border:2px solid #222222;
+  float:left;
+  border-radius:100px;
+  position:relative;
+  cursor:pointer;
+  transition:.3s ease;
+}
+.toggleInput[type=checkbox]:checked + label{
+
+  background:#222222;
+}
+.toggleInput[type=checkbox]:checked + label:before{
+  left:20px;
+}
+.toggleLabel:before{
+  transition:.3s ease;
+  content:'';
+  width:20px;
+  height:20px;
+  position:absolute;
+  background:white;
+  left:2px;
+  top:2px;
+  box-sizing:border-box;
+  border:2px solid;
+  color:black;
+  border-radius:100px;
+}
+
+#filterButtons{
+    position: absolute;
+    top:35%;
+    bottom:37%;
+    right:5%;
+    left:83%;
+ 
+}
+/*End of Toggle Buttons-----------------------------------------------------------*/
+
 /*End of Index-------------------------------------------------------------------*/
 
 
