@@ -4,9 +4,9 @@ $(document).ready(function() {
     })
 })
 
-function showCard(){
+function showCard(unlockedCard){
     $(".unlockedCard").toggleClass("hideCard");
-    findCard();
+    findCard(unlockedCard);
 }
 
 //$(document).ready(function() {
@@ -22,12 +22,12 @@ function showCard(){
     });
 */
        
-    function findCard(){
+    function findCard(unlockedCard){
             
         var slqData = JSON.parse(localStorage.getItem("slqData"));
 
         if (slqData){
-            populateCards(slqData);
+            populateCards(slqData, unlockedCard);
         }else{
             var data = {
                 resource_id: "cf6e12d8-bd8d-4232-9843-7fa3195cee1c",
@@ -40,21 +40,22 @@ function showCard(){
                 cache: true,
                 success: function(data) {
                     localStorage.setItem("slqData", JSON.stringify(data));	
-                    populateCards(data);
+                    populateCards(data, unlockedCard);
                 }
             });
         }
     
     }
     
-    function populateCards(data){
+    function populateCards(data, unlockedCard){
         var RandomCard;
         var image = "";
         var name = "";
         var title ="";
         var words;
         
-        RandomCard = data.result.records[Math.floor(Math.random() * (62))];
+       // RandomCard = data.result.records[Math.floor(Math.random() * (62))];
+        RandomCard = data.result.records.filter(x => x['_id'] == unlockedCard)[0];
         image = RandomCard["Thumbnail image"];
         title = RandomCard["Title of image"];
         words = title.split(" ");
@@ -66,6 +67,7 @@ function showCard(){
          while(image == ""){
             
             RandomCard = data.result.records[Math.floor(Math.random() * (data.result.records.length))];
+           // RandomCard = data.result.records.filter(x => x['_id'] == unlockedCard)[0];
             image = RandomCard["Thumbnail image"];
             title = RandomCard["Title of image"];
             words = title.split(" ");

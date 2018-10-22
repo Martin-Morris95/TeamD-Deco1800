@@ -849,7 +849,8 @@ function createPopupContent(title, text, statistics) {
 function correct() {
   var unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
   if(!unlockedCards) {
-    unlockedCards = [44, 30, 24, 14, 43];
+   // unlockedCards = [44, 30, 24, 14, 43];
+    unlockedCards = []
     localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
   }
 
@@ -873,13 +874,13 @@ function correct() {
           }
         })
         localStorage.setItem("lockedCards", JSON.stringify(lockedCards));
-        unlockCard();
-        showCard();
+        var unlockedCard = unlockCard();
+        showCard(unlockedCard);
 			}
 		});
   } else {
-    unlockCard();
-    showCard();
+    var unlockedCard = unlockCard();
+    showCard(unlockedCard);
   }
   /*
   var unlocked;
@@ -892,6 +893,7 @@ function correct() {
 }
 
 function unlockCard() {
+  /*
   lockedCards = JSON.parse(localStorage.getItem("lockedCards"));
   unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
   index = Math.floor(Math.random() * lockedCards.length)
@@ -899,7 +901,17 @@ function unlockCard() {
   unlockedCards.push(unlocked);
   lockedCards.splice(index, 1);
   localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
-  localStorage.setItem("lockedCards", JSON.stringify(lockedCards));  
+  localStorage.setItem("lockedCards", JSON.stringify(lockedCards));
+  */
+  lockedCards = JSON.parse(localStorage.getItem("lockedCards"));
+  unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
+  var index = Math.floor(Math.random() * lockedCards.length)
+  var unlocked = lockedCards[index];
+  unlockedCards.push(unlocked);
+  lockedCards.splice(index, 1);
+  localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
+  localStorage.setItem("lockedCards", JSON.stringify(lockedCards));
+  return unlocked;
 }
 
 

@@ -10,7 +10,23 @@
                 <latitude>40.3</latitude>
                 <year>1914</year>
                 <casualties>8141</casualties>
-                <text>Lorem ipsum</text>
+                <text>Gallipoli was Australia's first major battle.</text>
+                <text>The Turkish resistance was well-coordinated and once their reinforcements arrived, a standstill was brought upon which made the initial assault lose momentum as the allied forces were confused.</text>
+                <text>Throughout the following days, fighting continued and many of the Turkish had occupied higher ground, which meant the allied forces suffered heavy losses. The Turkish soldiers were willing to give up their lives to defend their homelannd. They were tough and experienced.</text>
+                <text>Mustafa Kemal, the commander of the Turkish troops on Gallipoli was a national hero and outstanding leader.</text>
+                <text>The Australian living conditions were horrendous as there was constant sickness, disease, dirt, and death. It was very different from what they thought it was going to be. They wanted glory and adventure, however, they were always thirsty, digging and tunnelling, and living in camped dug-outs.</text>
+                <text>One of their major concerns was sanitation. The disease was spreading at an alarming rate and they were near the dead bodies that were covered in flies. This was made worse by the harsh climate. Lack of water and nutrition, as well as variety in the food, made it even harder.</text>
+                <text>At one stage 10 per cent of the force was evacuated weekly.</text>
+                <text>The evacuation was perhaps the greatest achievement of the campaign.</text>
+                <text>A well known ANZAC soldier who exemplified the ANZAC spirit was Private John Simpson Kirkpatrick or better known as Simpson. He was in the Australian Army Medical Corps and worked aa a stretch-bearer. He rescued injured men from the battle line at Monash Valley, day and night. He transported the wounded to ANZAC Cove on the back of his donkey. The donkey was originally brought to Gallipoli to carry water; however, Simpson found a much more important task for the donkey. Simpson and his donkey rescued around 300 wounded soldiers over 24 days at Gallipoli.</text>
+                <text>The ANZAC biscuits came about during the Gallipoli Battle as wives, mothers and sisters of soldiers made biscuits out of oats, sugar, flour, coconut, butter and golden syrups. The ANZAC biscuits were hard and long-lasting so that it would survive the long journey to the troops.</text>
+                <text>Alec Campbell was the last surviving ANZAC. He died on the 16th of May 2002 at the age of 103.</text>
+                <text>On the 25th of April 1915, the ANZAC legend began as the first wave of ANZAC soldiers landed at Gallipoli.</text>
+                <text>At Gallipoli drip, rifles were self-firing rifles that were used to deceive the Turks during the evacuation of December 1915.</text>
+                <text>After the withdrawal of the last men, the rifles still fired automatically from the trenches. How this was done was that a weight was released which pulled the trigger. One kerosene tin was placed underneath another one. The top tin was full of water, which would transfer to the lower tin when small holes were punched in it at the last minute. The rifle would fire when the bottom tin became heavy.</text>
+                <text>The trigger was held back by a string that went through a candle, which slowly burnt and broke the sting. This released the trigger.</text>
+                <text>Lance Corporal W. C. Scurry of the 7th Battalion, AIF invented the drip rifle with assistance from Private A.H. Lawrence. Scurry was awarded the Distinguished Conduct Medal for his part that he played in making the evacuation a success. He was also mentioned in dispatches and promoted to sergeant</text>
+                <text>Lance Corporal William Beech was an Australian builder’s foreman who invented the periscope rifle. This allowed soldiers to aim their guns without putting them in the direct line of fire.</text>
             </battle>
         </markers>
     </country>
@@ -25,6 +41,21 @@
                 <latitude>50.2</latitude>
                 <year>1916</year>
                 <casualties>2000</casualties>
+                <text>On the 19th of July 1916, the battle of Fromelles occurred which was the first battle Australian soldiers participated in on the Western Front. The 5th Australians Division just arrived, and they were ordered to attack the strongly held German front line in French Flanders.</text>
+                <text>This attack was supposed to stop German reserves from moving south to the Somme where a large Allied offensive had begun on the 1st of July.</text>
+                <text>The attack failed miserably. In broad daylight over open ground, Australian and British soldiers were assaulted by heavy fire from the German lines.</text>
+                <text>Almost 2000 Australians were killed and about 400 were captured. There were over 5,500 Australian casualties.</text>
+                <text>This was considered to be the greatest loss in 24 hours by a single division during the entire WWI.</text>
+                <text>Some even consider this to be the most tragic event in Australian’s history.</text>
+                <text>The conditions were terrible for Australian soldiers manning the trenches as the winter temperature dropped to minute 20 degrees. Many suffered frostbite while others froze to death.</text>
+                <text>Many Australians were disappointed with the flanking British unit’s performance.</text>
+                <text>The battle of Fromelles for most soldiers was a military disaster. This was because of muddled plans and reckless decision-making by both the Australian and British commanders as well as the staff.</text>
+                <text>According to Sergeant “Jimmy” Downing of the 57th Battalion, hundreds of men were mowed down and cut in two by steams of bullets. This was also over in five minutes.</text>
+                <text>Within 15 minutes the 15th Victorian Brigade was destroyed. Brigadier General Harold “Pompey” Elliott was the commander and expressed misgivings about the attack. The following day he was speechless with guilt. He had tears streaming down his face while he shook the hands of the returning survivors.</text>
+                <text>Charles Bean, who was the official war correspondent, recorded after the meeting with the commander that he felt as if he was in the presence of a man who had lost his wife. 887 officers and men of the 60th battalion went into the attack. That following afternoon the survivors gathered at brigade headquarters. A roll call was done, only one officer and 106 men answered.</text>
+                <text>The battle of Fromelles showed that Australian soldiers were unprepared for the warfare on the Western Front. They still had a lot to learn and the lessons would be costly as well as hard. The major failing of Fromelles, however, was also caused by the disorganized planning of the attack. This shows the ineptitude of senior commanders.</text>
+                <text>Nine Australian soldiers were either killed, wounded or taken prisoner every minute of the Battle of Fromelles.</text>
+                <text>It lasted for 10 hours overnight on 19-20 July 1916.</text>
             </battle>
             <battle>
                 <name>Pozieres</name>
@@ -32,6 +63,22 @@
                 <latitude>50</latitude>
                 <year>1916</year>
                 <casualties>6800</casualties>
+                <text>Pozieres was an essential advantage as it provided higher ground and a place where further attacks could be launched. On the 23rd of July 1916, the 1st Division was the first to go into the battle.</text>
+                <text>The village of Pozieres was captured by the Australian troops, whereupon they had to endure the relentless artillery bombardment that inflicted heavy losses among the allied troops and reduced the village to rubble.</text>
+                <text>The 2nd Division suffered even more losses when they relieved the 1st.</text>
+                <text>The 4th Division then went in and held off the German attempts to retake Pozieres.</text>
+                <text>Australian troops made 19 attacks, 16 of them at night, over a period of 42 days. The number of casualties was 23,000 men.</text>
+                <text>The experience at Pozieres was hell for the men thrown into the fight.</text>
+                <text>Both sides used artillery fire on the battlefield.</text>
+                <text>The allied forces gained some ground and then the enemy would counter-attack.</text>
+                <text>Throughout this action the fighting was wild, and all the time the shelling tore up the ground, folded the trenches in, and blew away any protection.</text>
+                <text>The shelling destroyed the ground, folded trenches in and blew away any protection.</text>
+                <text>Five Victoria Crosses were won during this battle.</text>
+                <text>Lieutenant General Sir Hubert Gough was an aggressive man and full of initiative. He got approval to use the 1st Anzac Corps to make another attempt at Pozières.</text>
+                <text>He was impatient to demonstrate his worth as an Army commander and because of his impetuous nature he gave the 1st Anzac Corps little time to prepare.</text>
+                <text>German bombardment pounded the trenches that the Australians had just dug up with about four shells a minute, breaking its sides and burying men. Comraded would constantly dig them out dead or alive. Parts of the trench, by evening, could not be found by the relieving companies. The southwest entrance to the village was also pounded heavily and continuously. The main route was called Dead Man’s Road as it was lined with the dead.</text>
+                <text>On the morning of the 27th, emerging from the rubble of Pozières, the survivors of the Australian 1st Division were described as being so dazed they appeared to be walking in a dream. They were relieved by the Australian 2nd Division.</text>
+                <text>Pozieres is also what a town in Queensland is called. This was originally a soldier settlement village, therefore, they named it Pozieres after WWI to commemorate the selfless contributions made by the men and women who served in France.</text>
             </battle>
             <battle>
                 <name>Mouquet Farm</name>
@@ -39,6 +86,25 @@
                 <latitude>50</latitude>
                 <year>1916</year>
                 <casualties>59</casualties>
+                <text>Conditions at Mouquet France was terrible as the soldiers lacked sleep, there was constant enemy shelling, the exertion of bringing up supplies and food, exhaustion of carrying wounded and the endless digging.</text>
+                <text>The worst job was being the runner.</text> 
+                <text>Telephone lines were being destroyed, therefore, soldiers had to sprint over the wilderness to his headquarters, constantly facing death.</text> 
+                <text>The 16th Battalion from Western Australia saw the beginning and end of the battle at Mouquet Farm.</text>
+                <text>They had also fought previously at Gallipoli and were one of the original battalions, landing on the evening of the 25th of April.</text>
+                <text>The 16th made their first attack on the Western Front at midnight on the 9th of August.</text>
+                <text>They were guided by flashlights when they crossed no-man’s-land. A different coloured light was used for each company.</text>
+                <text>They successfully meant their objectives and seized a number of German soldiers and their machine-guns.</text> 
+                <text>German’s launched a counter-attack that was swift and descended on the captured positions.</text>
+                <text>The 16th was able to hold the German’s off, however, their battalion position fell heavily due to the enemy bombardment.</text>
+                <text>Thousands of causalities suffered, and many battalions were used up, while the 16th returned to Mouquet Farm on the 29th of August 1916.</text>
+                <text>On the night of 29 August, led by Major Percy Black, one of the legendary leaders of the AIF, the 16th assaulted the ruins of Mouquet Farm and did battle with the Germans in the dugouts and cellars of this fortress.</text>
+                <text>The 16th battalion assaulted the ruins of Mouquet Farm and fought with the Germans in the dugouts and cellars. They, however, weren’t able to hold Mouquet Farm. They were virtually thrown back to their starting lines by the enemy counter-attacks.</text>
+                <text>The autumn rains set in making the battlefield muddy and active operations decreased. This happened in October and the troops that crossed the battlefield sank deeper into the mud, slowing their movement. Roads also became impassable. The Australian Divisions spent most of their difficult months of the war during this time.</text>
+                <text>Two attacks were launched in November, one was near Flers and the other near Gueudcourt. The Australians succeeded in both attacks as they entered the enemy trenches. The soldiers experience terrible struggles as the mud caused great exhaustion. It was decided that only small attacks and raids were possible during the remainder of the winter, therefore, the campaign ended.</text>
+                <text>Mouquet Farm was never captured by the Australians which directly assaulted the position only twice. Their attacks slowly decreased, and the three divisions were sent to Belgium to recover.</text>
+                <text>There is a Ross Bastiaan bronze plaque which is positioned at the farm today in memory of the fallen dead.</text>
+                <text>Three Australian divisions orchestrated nine separate attacks to take the farm.</text>
+                <text>Mouquet Farm was called ‘Moo Cow’ Farm by the Australian Diggers.</text>
             </battle>
             <battle>
                 <name>Bullecourt</name>
@@ -46,6 +112,15 @@
                 <latitude>50.2</latitude>
                 <year>1917</year>
                 <casualties>10000</casualties>
+                <text>The attack launched at Bullecourt on 11th of April 1917 was a disaster due to poor planning and an aggressive as well as energetic commander named Hubert Gough.</text>
+                <text>Four experienced Australian divisions of I ANZAC Corps was under the command of Hubert Gough.</text>
+                <text>A further attack on the same ground, despite previous failings, was ordered for the 3rd of May.</text>
+                <text>AIF lost 10,000 men in the two battles when the Australian troops brook into and took part of the Hindenburg Line, which never gained the allied forces a strategic advantage.</text>
+                <text>It was an experience of horror and devastation that those who survived the fighting at Bullecourt could never forget. They endured the 1916-17 winter which was absolutely terrible. Opposing armies faced each other across a field of frozen mud. A great defensive line was built by the Germans during this time, a few kilometres behind their front. This line was called the Hindenburg Line. Once the weather improved in early 1917 the Germans staged a fighting withdrawal to their new line. The allied troops were given false hope of victory as they suddenly advanced across open fields. They advanced up to the Hindenburg Line.</text>
+                <text>The Australian troops once again showed bravery at Bullecourt during the attack. They AIF added another hard-earned battle honour to their list.</text>
+                <text>Australian troops for the first time fought alongside a new military invention, which was the tank. This weapon failed miserably.</text>
+                <text>A month later, a second attack was launched. Another 7,500 were killed or wounded, turning Bullecourt into a charnel house that some say was worse than Pozieres.</text>
+                <text>The Australian soldiers' confidence in the British command was shaken.</text>
             </battle>
             <battle>
                 <name>Lagnicourt</name>
@@ -121,6 +196,28 @@
                 <latitude>-4.3</latitude>
                 <year>1914</year>
                 <casualties>6</casualties>
+                <text>Australians were sent to Papua New Guinea to capture and occupy the New Guineas colonies that Germany had control over.</text>
+                <text>One of Australian’s missions was to destroy German’s wireless stations which formed part of the German wireless network in New Guinea.</text>
+                <text>The group of soldiers who were sent to Papua New Guinea was the Australian Naval and Military Expeditionary Force (ANMEF), which was made up of volunteers who were hastily put together in early August 1914.</text>
+                <text>These included eight companies of infantry.</text>
+                <text>The Royal Australian Naval Reserve was made up of 500 naval reservists and time-expired Royal Navy seamen.</text>
+                <text>Many in the infantry had little or no experience in the military, however, those who were in the naval forces had skills that would help with their mission as they were disciplined, well versed in musketry, field gun use, cutlass skills and general field work.</text>
+            	<text>Australian’s suffered their first causalities.</text>
+                <text>The first Australian was awarded the decoration for bravery.</text>
+                <text>The Australian Navy maintained patrols, after they occupied Rabaul, to prevent German warships from making a successful counter-attack.</text> 
+                <text>The Australian submarine, known as the AE1, sadly disappeared on September 14, 1914, during one of their patrols.</text> 
+                <text>The submarine and it’s 35 crew members were never found until December 2017.</text>
+                <text>The failed 1st AIF Activities and the Dardanelles campaign overshadowed the Battle of Rabaul.</text>
+                <text>Private Scott-Holland wrote in a letter talking about how they fought the natives who climbed up a coconut palm tree and fired down at them. According to him, the natives were completely unrecognizable.</text>
+                <text>In the same letter, he wrote about how one experienced extreme fatigue like the soldiers on active service did.</text>
+                <text>Private Scott-Holland wrote about how many expected the enemy to attack at any moment, which meant many suffered from lack of sleep, however, he deduced that the enemy may have thought them far greater than what they actually were. There was only twenty-seven of them.</text>
+                <text>According to the same soldier the natives used poisonous arrows and spears as their weapons and certainly gave the soldiers a lively reception in the jungle.</text>
+                <text>One of their objectives given to them from the authorities was to round up all natives or cannibals as they named them, then force the chief to abide by the laws regarding the conduct of inhabitants of this group of islands.</text>
+                <text>In Private Scott-Holland’s letter, he talked about how the soldiers traded with the peaceful kanakas who brought back to the town, bananas, mangoes and breadfruit that grew plentiful on the island. In exchange for these fruits, the soldiers would give the biscuits and tins of bully beef.</text>
+                <text>Private Scott-Holland also experienced loss as did the majority of the soldiers. His best naval friend was a torpedo instructor on the AE1, which was the Australian submarine that went missing. 10 days later they knew there was no hope for the submarine to be found. They suspected that the enemy sunk it or it went down to the depths, like many other submarines did, never to rise again.</text>
+                <text>The soldiers used to ask the natives to climb the coconut tree for them so that they could drink from the coconuts.</text>
+                <text>Another Soldier Private Les. Neate wrote about how there was plenty of the fever, known as malaria, going around, however many of the soldiers hadn’t got it yet.</text>
+                <text>Many soldiers didn’t understand the Chinese or Japanese culture, so they believed they were the top dogs there as they always received a bow from them when they passed them on the road. They saw this as them being very respectful to the might of England.</text>
             </battle>
         </markers>
     </country>
@@ -135,6 +232,17 @@
                 <latitude>40.2</latitude>
                 <year>1915</year>
                 <casualties>2000</casualties>
+                <text>On the 6th of August 1915 in the afternoon the battle of Lone Pine took place.</text>
+                <text>This battle was designed to create a diversion to allow another assault further north to seize the high ground of the Sari Bair Range. This battle was a part of the allied August Offensive, which was the troop's last attempt to break the stalemate that started ever since the landings on 25 April.</text>
+                <text>Artillery bombardment shelled the Turkish positions at 4:30 pm.</text>
+                <text>An hour later, through heavy fire from artillery, rifles and machine guns, Australian’s crossed no man’s land.</text>
+                <text>However, when they reached the Turkish trenches, some had been covered with pine logs and the Australian infantry had to break through the makeshift roofs to get to the enemy.</text>
+                <text>Despite this, the Lone Pine trenches were taken after 20 minutes of fighting, but there followed four days of intense hand-to-hand fighting at a cost of 2,000 Australian and almost 7,000 Turkish casualties. Seven Australians were awarded the Victoria Cross for their actions that day.</text>
+                <text>The Battle of Lone Pine is considered to be one of the few allied successes of the Gallipoli campaign, even though Australians were driven back from the trenches several days later by the Turks.</text>
+                <text>Soldiers wore white armbands and back patches to make the men more visible to each other in the dark so that they weren’t mistaken for the enemy.</text>
+                <text>The Turks seemed to have a large supply of cricket-ball style bombers and were well trained at throwing them, according to Charles Bean. Australian soldiers had no bombs so that had to make them by stuffing old jam tins with pieces of Turkish shell and barbed wire.</text>
+                <text>Bombs were a very powerful weapon for hand-to-hand fighting, as Australians were quickly learning.</text>
+                <text>Sergeant Cyril Lawrence of the Australian Engineers described the battlefield as being one mass of dead bodies, rifles, shovels, bags of bombs and bales of sandbags just to name a few. The undergrowth was cut down, leaving only a few simple stalks and the ground itself appeared just as though someone got a huge rake and scratched it all over.</text>
             </battle>
             <battle>
                 <name>Nek</name>
@@ -142,6 +250,19 @@
                 <latitude>40.24</latitude>
                 <year>1915</year>
                 <casualties>234</casualties>
+                <text>The Nek was where the tragic assault by the 3rd Light Horse Brigade on the 7th of August 1915 at dawn occurred.</text>
+                <text>The Nek was an important position held by the allied forces on the northern end of the Anzac front line.</text>
+                <text>The British destroyer steaming offshore was supposed to bombard the Turkish positions with shells, however, they fell beyond their target.</text>
+                <text>This commenced the attack and was supposed to provide cover for the Australians, however, it ended seven minutes early.</text>
+                <text>The officers of the light horse kept their men back as they waited until the appointed time for the attack which gave the Turkish troops time to re-man their positions.</text>
+                <text>A barrage of Turkish rifle and machine-gun fire immediately shot down the first wave of the light horsemen.</text>
+                <text>The second line was also shot down as they scrambled over the dead and wounded to attack.</text>
+                <text>The Australian officer in charge refused to accept defeat and would not cancel the attack when it was proposed. The third wave of light horsemen was sent over.</text>
+                <text>The cancellation was proposed again, however, before the decision was made and because of a misunderstanding, the right flank of the fourth line charged. The rest followed.</text>
+                <text>The casualties were devasting as 234 were killed and 138 were wounded out of the 600 Australian troops.</text>
+                <text>The movie Gallipoli, starring Mel Gibson as Frank and Mark Lee as Archie, ending shows Archie and his friends climbing over the trenches and charging towards the enemy lines where they were shot down by machine guns. This scene was actually based off the battle of Nek.</text>
+                <text>The personal relationships between a couple of Australian officers were very poor. Cooperation and clear thinking were essential at the time, however, there was no effective communication.</text>
+                <text>During the battle, Australian soldiers showed true courage as they went over the trenches knowing they would most likely be killed.</text>
             </battle>
             <battle>
                 <name>Beersheba</name>
@@ -176,6 +297,21 @@
                 <latitude>30.7</latitude>
                 <year>1916</year>
                 <casualties>190</casualties>
+                <text>Suez Canal was the reason that Egypt was of great strategic importance to Britain because it linked the Red Sea with the Mediterranean.</text>
+                <text>Suez Canal was defended from an attack by the enemy.</text>
+                <text>Suez Canal provided the quickest route Between Britain and countries around the Western Pacific oceans and Indian.</text>
+                <text>Australian infantry supported the Indian force when a Turkish expedition attacked on the 2nd of February. They were able to successfully defend the canal.</text>
+                <text>The living conditions were very unpleasant as it was extremely hot and always dirty. Both men and horses were under incredible strain when doing work and were constantly thirsty.</text>
+                <text>Troops had to travel long distances where the temperature would dramatically change from extreme cold to extreme heat. They slept in tents that offered little protection or slept in the open.</text>
+                <text>Operations had to be planned to make sure the men and animals had access to water.</text> 
+                <text>There were also heaps of flies.</text>
+                <text>The British cavalrymen were considered to be splendid soldiers, however, they got lost a lot in the featureless sea of sand. Australia troopers, however, seemed almost at home in the desert.</text>
+                <text>The classic mounted cavalry style of the Australians became well known as their technique was different from that of the British Mounted Infantry. Australia’s Light horse in true cavalry style would fire their rifles from the saddle while still advancing. This made them a formidable enemy. This was different from the British as they tended to dismount as soon as they reached the battlefield to fight.</text>
+                <text>The Light Horse regiments re-unites with their horses in Egypt after the evacuation of Anzac. They were envious of the Australian infantry as they watched them leave for France. The 13th and part of the 4th Light Horse were the only two regiments sent to the Western Front in Europe.</text>
+                <text>Many of the Light Horse soldiers felt they were missing the real war as they endured the further training, patrols and outpost duties. There were of course reasons for keeping them there as the Suez canal was very important.</text>
+                <text>The Australian Light Horse was called The Kings of the Feathers by the Arabs.</text>
+                <text>This was because when they went to Egypt, Tasmanians, South Australians and Queenslanders wore splendid emu plumes in their hats. This was a small square of emu hide with the long, brown tipped feathers still attached.</text>
+                <text>The plumes were adopted by almost all the Light Horse regiments, however, it was originally a badge of honour of the Queensland Mounted Infantry for their work in the shearers strike of 1891.</text>
             </battle>
             <battle>
                 <name>Romani, Sinai Peninsula</name>
@@ -183,6 +319,15 @@
                 <latitude>29.5</latitude>
                 <year>1916</year>
                 <casualties>8</casualties>
+                <text>The Turkish Advance to Romani was defeated with the help of the Australian troops.</text>
+                <text>On the 4th of August 1916 in the early hours, Ottoman troops attacked.</text>
+                <text>The Australian 1st Light Horse Brigade was the only ones ready to meet the attack, however, they were outnumbered and forced to fall back.</text>
+                <text>Ottomans faced rising causalities and they had exhausted their supply of ammunition as the day progressed, while the Australian and New Zealand troops were reinforced by the allied forces.</text>
+                <text>The Anzac Mounted Division counter-attacked before dawn on the 5th of August.</text>
+                <text>The Turkish resistance collapsed.</text>
+                <text>By the end of the battle, there were approximately 1,100 allied casualties and 4,000 Turkish causalities, with another 4,000 taken prisoner.</text>
+                <text>Lieutenant General Henry (Harry) Chauvel was considered to be a very good battle commander of the ANZACs.</text>
+                <text>On horseback, Chauvel led out a vital reserve brigade from the front in full view of attacking Turks, who were exhausted as dawn brought another brutally hot day. This decision was very uncommon for a man of his maturity, who was 51, and his rank. The Turks were given a huge psychological blow as they saw 1000 fresh horsemen coming to join the battle. The Turks had no food, water and footwear, which had been discarded during a night of battle and pursuit.</text>
             </battle>
         </markers>
     </country>
@@ -197,6 +342,13 @@
                 <latitude>50.85</latitude>
                 <year>1917</year>
                 <casualties>12000</casualties>
+                <text>On the 20th of September 1917, the Australian infantry joined the Third Battle of Ypres which had been going on since the 31st of July.</text>
+                <text>Fortunately, fighting conditions got better when the weather changed.</text>
+                <text>Australians’ progress was often blocked by the Germans and many men fell under the shell and machine-gun fire.</text>
+                <text>Despite this, Australians were able to meet the objectives with the support of heavy artillery and hold off the enemy counter-attacks.</text>
+                <text>The line was pushed forward by a few kilometres as they stayed within range of the supporting artillery and advanced step-by-step. This, however, was not done without heavy cost.</text>
+                <text>The town of Ypres was deserted by its inhabitants and devasted by shellfire.</text>
+                
             </battle>
             <battle>
                 <name>Messines</name>
@@ -204,6 +356,15 @@
                 <latitude>50.77</latitude>
                 <year>1917</year>
                 <casualties>6000</casualties>
+                <text>On the 7th of June 1917, the battle of Messines was fought and was the first large-scale action that involved Australian troops in Belgium.</text>
+                <text>The battle of Messines was the 3rd Division’s first major battle.</text>
+                <text>The battle was an important success.</text>
+                <text>Nineteen powerful mines exploded under the German trenches along the Messines ridge at 3:10 am on the 7th of June 1917.</text>
+                <text>As this was the 3rd Australian Division’s first major battle they were anxious to prove themselves.</text>
+                <text>The other Australian division involved in the battle attacked later in the day.</text>
+                <text>There was some more fighting, however, by the end of the first evening it was virtually decided with the ridge being taken and enemy counter-attacks repulsed.</text>
+                <text>There were 6000 casualties</text>
+                <text>The Battle of Messines opening was considered to be at the time the biggest bang in history. At the northern extremity of the line, at Hill 60, the 1st Australian Tunneling Company had been at work since November 1916. They dug two large mineshafts under Hill 60 and The Caterpillar. The mine at Hill 60 created a crater that was 60-feet deep and 260-feet wide. German front-line troops suffered majority from this.</text>
             </battle>
         </markers>
     </country>
