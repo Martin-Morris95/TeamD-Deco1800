@@ -1903,13 +1903,42 @@ new google.maps.LatLng(31.114926066815908, 28.423438675186276),
 new google.maps.LatLng(31.03965023706078, 28.467383987686276)];
 var polyline = new google.maps.Polyline({path:path, strokeColor: "#0F00FF", strokeOpacity: 1.0, strokeWeight: 5});
 polyline.setMap(map);
-
 shapes.push(polyline);
     
 root = new Root(2.5);
-var egyptDeploy = new Marker(40.419097797877555, 26.660393332790363, [1915], 6, "Images/DeployMarker.png");
-root.addChild(egyptDeploy);
+var gallipoliDeploy = new Marker(40.419097797877555, 26.660393332790363, [1915], 6, "Images/DeployMarker.png");
+root.addChild(gallipoliDeploy);
 */  
+//-Deployment 2016
+/*
+var shapes = [];
+var path = [
+];
+var polyline = new google.maps.Polyline({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
+polyline.setMap(map);
+map.setCenter(new google.maps.LatLng(39.566424929007745, 6.043997380848509), 6);
+shapes.push(polyline);
+var path = [
+new google.maps.LatLng(31.020003256562816, 28.519938046482253),
+new google.maps.LatLng(33.619209883979345, 26.498453671482253),
+new google.maps.LatLng(34.13001076546804, 25.180094296482253),
+new google.maps.LatLng(35.2142255061443, 19.027750546482253),
+new google.maps.LatLng(36.567027599868375, 13.578531796482253),
+new google.maps.LatLng(37.68818278328015, 10.853922421482253),
+new google.maps.LatLng(38.10432051224594, 9.008219296482253),
+new google.maps.LatLng(39.1343362566655, 7.0746255464822525),
+new google.maps.LatLng(41.34796302184941, 5.4925942964822525),
+new google.maps.LatLng(43.54347312782956, 3.8796907402235092)];
+var polyline = new google.maps.Polyline({path:path, strokeColor: "#0F00FF", strokeOpacity: 1.0, strokeWeight: 5});
+polyline.setMap(map);
+shapes.push(polyline);
+
+root = new Root(2.5);
+var franceDeploy = new Marker(43.54347312782956, 3.8796907402235092, [1916], 6, "Images/DeployMarker.png");
+root.addChild(franceDeploy);
+*/
+//Deployment end-----------------------------------------------------------------------------------------
+    
   if(serverSide) {
     getMarkers();
   } else {
