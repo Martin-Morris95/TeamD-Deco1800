@@ -1,4 +1,4 @@
-var serverSide = false;
+var serverSide = true;
 var markers = [];
 var map;
 var root;
@@ -1749,7 +1749,7 @@ shapes.push(polyline);
     getMarkers();
   } else {
     root = new Root(2.5);
-    var turkey = new Marker(39, 35, [1914,1915], 6, "images/BattleMarker.png");
+    var turkey = new Marker(39, 35, [1914,1915], 6, "Images/BattleMarker.png");
     var france = new Marker(48, 0.8, [], 6);
     root.addChild(turkey);
     root.addChild(france);
@@ -2003,7 +2003,7 @@ function getMarkers() {
     success: function(data) {
       root = new Root(2.5);
       data.country.forEach(function(country) {
-        var tempCountry = new Marker(parseFloat(country.latitude), parseFloat(country.longitude), [], 6,"images/TopLevel.png");
+        var tempCountry = new Marker(parseFloat(country.latitude), parseFloat(country.longitude), [], 6,"Images/TopLevel.png");
         root.addChild(tempCountry);
 
         var handleBattle = function(battle) {
@@ -2012,7 +2012,7 @@ function getMarkers() {
           var popupContent = createPopupContent(battle.name, battle.text || [], stats);
           var popup = new Popup(popupContent);
           var year = parseInt(battle.year);
-          var tempBattle = new Marker(parseFloat(battle.latitude), parseFloat(battle.longitude), [year], 7, "images/BattleMarker.png", popup);
+          var tempBattle = new Marker(parseFloat(battle.latitude), parseFloat(battle.longitude), [year], 7, "Images/BattleMarker.png", popup);
           tempBattle.hide();
           tempCountry.addChild(tempBattle);
           tempCountry.addYear(year);

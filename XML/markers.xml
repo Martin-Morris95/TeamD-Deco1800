@@ -128,6 +128,7 @@
                 <latitude>50.2</latitude>
                 <year>1917</year>
                 <casualties>700</casualties>
+                <text>The battle of Lagnicourt was a stalemate between the allied troops, consisting of Australia and British soldiers, and the German troops.</text>
             </battle>
             <battle>
                 <name>Hamel</name>
@@ -135,6 +136,19 @@
                 <latitude>50.3</latitude>
                 <year>1918</year>
                 <casualties>250</casualties>
+                <text>The Battle of Hamel was a victory for the Australian 4th Division and other allied forces.</text>
+                <text>The aim was to attack the German forces to straighten up the allied lines.</text>
+                <text>The Germans were completely surprised by the carefully planned attack, which allowed the allied side to win and straighten up their lines. The attack lasted 90 minutes. The allied side suffered 1,000, casualties and almost 1,500 Germans surrendered.</text>
+                <text>The artillery fired a smoke screen for the Australian and American infantrymen at 3:02 am.</text>
+                <text>This was the last of the artillery bombardments of smoke and gas during the build-up to the attack.</text>
+                <text>The Germans had to repeatedly put on their gas masks because of the gas shells.</text>
+                <text>The German’s assumed that there would be a bombardment with gas shells because of the smoke screen at 3:02 am.</text>
+                <text>At 3.10am the artillery started up a creeping barrage for four minutes.</text>
+                <text>The Australian battalions left their trenches at precisely 3:14 am and advanced towards the German Front Line.</text>
+                <text>It was a difficult fight as the German Trench called Pear Trench put up a tough defence.</text>
+                <text>The Australian Corps reached their objectives by 4:35 am, making the attack a great success. The fight lasted exactly 93 minutes.</text>
+                <text>The troops at ten minutes past three bombarded the enemy’s front line with sudden ferociousness. They pounded, battered and chopped it to pieces with shells of every calibre such as light, medium, heavy, gas, shrapnel, phosphorous shells and high explosives.</text>
+                <text>Tanks were used to destroy the machine guns in the enemy strong points.</text>
             </battle>
             <battle>
                 <name>Morlancourt</name>
@@ -142,6 +156,10 @@
                 <latitude>50</latitude>
                 <year>1918</year>
                 <casualties>264</casualties>
+                <text>The Australian 3rd Division advanced to fill a gap in the Allied line during the battle.</text>
+                <text>Australian’s were stopped by the German troops before they could get Morlancourt.</text>
+                <text>There were heavy casualties as they attacked the German troops. Allied forces were able to stop the German advance towards Amiens. This stabilized the Allied line north of the Somme.</text>
+                <text>Australians sought to consolidate their positions around the village of Morlancourt prior to the start of the Allied Hundred Days Offensive which was the Allied offensive that ended the First World War.</text>
             </battle>
             <battle>
                 <name>Villers-Bretonneux</name>
@@ -149,6 +167,16 @@
                 <latitude>49.9</latitude>
                 <year>1918</year>
                 <casualties>2400</casualties>
+                <text>On the night of April 24 in 1918, two Australian brigades took part in the counter-attack to stop the German offensive.</text>
+                <text>About 2,400 Australians died in the battle and even though they suffered a terrible loss they also displayed great bravery.</text>
+                <text>The Germans captured Villers-Bretonneux a tactically important town.</text>
+                <text>Two Australian brigades and allied forces were ordered to encircle the town at night as part of the plan to do an immediate counter-attack.</text>
+                <text>Australians on the 25th of April at dawn broke through the German entrenchment.</text>
+                <text>They were able to secure Villers-Bretonneux and create a new front line to the east. This ended the German offensive on the Somme.</text>
+                <text>The town never fell back into enemy hands for the rest of WWI.</text>
+                <text>Most of the shell holes passed were occupied with a sniper or two, however, most of the time it was machine gun crew. They were quickly disposed of and the platoon advanced forward to no man’s land beyond their first objective. They were then recalled to their objective which was a trench positioned extreme left of the village. All hands went to work to clear the trench and dig outposts till daylight. Under Corporal Cherry, a posh was pushed to protect the right flank from an attack from the village. The post successfully disposed of a machine gunner with grenades.</text>
+                <text>The platoon and the rest of the company, at daylight, gathered in the newly won trench, expecting a counterattack which never came.</text>
+                <text>The German machine guns were the only real defence, which put up a very heavy barrage. The shooting was wild and most were too high to cause a lot of damage in respect to the number of ammunition.</text>
             </battle>
             <battle>
                 <name>Dernancourt</name>
@@ -156,12 +184,25 @@
                 <latitude>40.98</latitude>
                 <year>1918</year>
                 <casualties>137</casualties>
+                <text>The 47th and 48th Battalion moved into position along the embankment facing Dernancount on the night of 27 March 1918.</text>
+                <text>The Germans had captured Dernancourt and the allied forces tried to recapture the village. The British artillery bombarded the village until the enemy soldiers were seen leaving, which was at 2 pm.</text>
+                <text>British troops moved towards the village, however, enemy fire drove them back as they suffered heavy casualties. The 45th Battalion made up of soldiers from New South Wales were ordered forward to assist in recapturing Dernancourt. Unfortunately, they were badly hit as they made their way down the hill towards the embankment.</text>
+                <text>The British were pushed right back across the old 1916 battlefields when the Germans launched a great Spring Offensive in March 1918. The Australian Corps in one last hope of victory before the arrival of the American forces rushed to the relieve British units that were exhausted and help defend lines that were greatly weakened at Dernancourt.</text>
+                <text>Stanley McDougall of the 47th Battalion, an Australian soldier, ran along the railway track to warn his platoon that the Germans were close by. He later seized a Lewis machine gun and rushed forward. He opened fire at the Germans, killing two machine-gun teams, however, he burnt his hand when the casing of the Lewis barrel became too hot. Sergeant JC Lawrence helped McDougall by holding the gun while he continued to fire. When his ammunition ran out he seized a bayonet and charged at the enemy, killing four men. This included a German officer that was aiming his pistol at some Australians. He was awarded the Victoria Cross for his display of courage and his actions.</text>
+                <text>Dernancourt and Australians have retained their close bond of friendship ever since the war. A street name was called ‘Rue d’Australie’ and the school hall was named ‘Pavillon Adelaide’.</text>
+                <text>French civilians were loading their possessions into carts, preparing to evacuate when the Australian approached. Civilians were reported as being greatly reassured by the arrival of the Australians.</text>
             </battle>
             <battle>
                 <name>Hazebrouck</name>
                 <longitude>2.5</longitude>
                 <latitude>50.7</latitude>
                 <year>1918</year>
+                <text>The 1st Australian Division reached the Amiens area and on the 10th of April was ordered to go to Hazebrouck by train.</text>
+                <text>There were less than eight kilometres that separated the Germans from Hazebrouck.</text>
+                <text>The German thrust was deflected further north as the 1st Division beat off heavy attacks on the 14th and 17th of April.</text>
+                <text>The German progress was stopped by the 1st Australian Division at Hazebrouck.</text>
+                <text>Hazebrouck was an important military target, during World War I because nearly all British supplies travelled by railway.</text>
+                <text>Deserters sheltered in the French town of Hazebrouck. Unfortunately for the deserters, it became a front-line zone and the civil population was evacuated. Deserters were left stranded, hiding in the cellars of houses that were destroyed. The robbed and looted the dumps at night for food in their efforts to exist and escape capture. At night in 1918, it was unsafe to venture through Hazebrouck alone and unarmed.</text>
             </battle>
             <battle>
                 <name>Mont St Quentin</name>
@@ -169,12 +210,26 @@
                 <latitude>49.9</latitude>
                 <year>1918</year>
                 <casualties>12187</casualties>
+                <text>On the 31st of August at night the 2nd Australian Division crossed the Somme River and attacked Mont St Quentin at 5 am.</text>
+                <text>They attacked from a very difficult and unexpected position as it was an uphill fight for the troops, across open ground.</text>
+                <text>They were in a vulnerable position because the Germans could attack them easily as they held the higher ground.</text>
+                <text>This was considered to be the finest achievement of the AIF.</text>
+                <text>o	The troops used bombs and bayonet to force the enemy back as they reached the strongly held trench.</text>
+                <text>Sergeant Albert Lowerson was awarded the Victoria Cross for his courage and leadership during the battle where the 21st Battalion skilfully drove the enemy from their well-established positions.</text>
+                <text>The 21 Battalion were also involved in the battle of Mont St Quentin.</text>
+                <text>It was important to the whole line that the soldiers took and held Mont St. Quentin because it would have meant the withdrawal of the force and postponement of capturing Peronne.</text>
+                <text>The soldiers went through small bushy trees and forced them aside using their bayonets. The enemy was concealed, and they bombarded them with bullets that clipped the leaves around them.</text>
             </battle>
             <battle>
                 <name>Epehy</name>
                 <longitude>3.1</longitude>
                 <latitude>50</latitude>
                 <year>1918</year>
+                <text>The two Australian divisions in this battle were successful in advancing three miles through German defence, despite other troops having difficulty progressing.</text>
+                <text>This showed the Allies that even the fortified Hindenburg Line was not impossible to break through.</text>
+                <text>o	Artillery had to be relied upon to prepare the way because few tanks could be provided for the attack. In the interest of surprise, however, they would not be able to provide a preliminary bombardment.</text>
+                <text>The 1st and 4th divisions had the strength of about 6,800 men and in one day they captured 4,243 prisoners, 76 guns, 300 machine guns and 30 trench mortars.</text>
+                <text>This battle saw the first mutiny of the Australian forces. 119 men of the Australian 1st Battalion refused to attack, which would help the neighbouring British unit. They were charged with being AWOL rather than face charges of desertion in the face of the enemy.</text>
             </battle>
             <battle>
                 <name>Peronne</name>
@@ -182,6 +237,28 @@
                 <latitude>49.9</latitude>
                 <year>1918</year>
                 <casualties>12187</casualties>
+                <text>Peronne was captured by the ANZACs</text>
+                <text>Allied troops also broke through lines to Péronne by 8.20 am on 1 September.</text>
+                <text>Germans quickly regrouped and launched a counter-attack which meant there were fierce fighting and heavy losses. Peronne was heavily shelled and attacked by the Germans. A lot of the fighting was hand-to-hand.</text>
+                <text>The Australians were able to establish a stronghold after heavy and exhausting fighting. This forced the complete withdrawal of the Germans.</text> 
+                <text>The Australians captured Peronne on the 3rd of September at night.</text>
+                <text>o	Captain W.J Denny recalled the significance of the battle of Peronne’s victory to the Australian forces in his report of the battle. The enemy’s defences on the British front was rudely shaken by this battle.</text>
+                <text>In 2003 Major A.C Fidge in the Australian Army wrote about how Monash developed a high-risk plan for the attack. The plan was for the 2nd Division to cross a series of marshes and launch a frontal assault, unfortunately, this attempt failed. After this attempt, Monash was able to think and react quickly.</text>
+                <text>Germans never believed that in only a few hours their great natural fortress would not only fall, but the whole garrison would be killed or captured, according to Captain W.J. Denny who fought in the battle.</text>
+                <text>Lewis gunners covered the party of the 53rd, while they made for a gap in the wire. Lance Sergeant George Potter was one of the Lewis gunners. He sprayed bullets over the wire. The Germans cleared from the trench line when the line was penetrated. The Australians found the water in the cooling covers of the enemy machine guns still boiling.</text>
+                <text>Unfortunately, George Potter was killed.</text>
+            </battle>
+            <battle>
+                <name>Montbrehain</name>
+                <longitude>3.3</longitude>
+                <latitude>49.97</latitude>
+                <year>1918</year>
+                <casualties>430</casualties>
+                <text>The Australian troops of the 6th Brigade attacked Montbrehain at 6:05 am on the 5th of October 1918.</text>
+                <text>As the Australians advanced they suffered heavy causalities because of how aggressive the German resistance was.</text>
+                <text>They achieved their objective, however, were subjected to uncoordinated counter-attacks from three directions and heavy shelling.</text> 
+                <text>The Australian troops were pushed nearly 360 meters back through Montbrehain.</text>
+                <text>This was the last battle for the Australian infantry on the Western Front during WWI. It was also where Lieutenant George Morby Ingram was awarded the Victoria Cross. He was the 64th and last Australian to receive the award during WWI.</text>
             </battle>
         </markers>
     </country>
@@ -270,6 +347,16 @@
                 <latitude>31.3</latitude>
                 <year>1917</year>
                 <casualties>31</casualties>
+                <text>A decision was made at the end of October to capture Beersheba which was positioned on the far end of the Turkish defensive line.</text>
+                <text>At Gaza, a diversion was created, while the main force attacked Beersheba.</text>
+                <text>The Turks initially held Beersheba.</text>
+                <text>The 4th and 12th Light Horse Regiments made a desperate decision to charge and capture the town as the light was fading and they were desperate for water. They knew they had little chance of getting back to another water supply.</text>
+                <text>The attack started at 4.30 pm and within half an hour the first trenches were cleared.</text>
+                <text>The ride was terrible as there was dust everywhere.</text>
+                <text>o	Chauvel’s greatest problem was to find sufficient water in Beersheba for his mounted troops. There was no water other then Esani, which was too far west for any use for a surprise attack. Chauvel studied the records of the Palestine Exploration Fund and found, through also questioning local Arabs, that the larger ancient towns in the area to the south and south-west of Beersheba must have had existing water supplies. Old wells were found at Asluju and a fortnight later they were working. This allowed an attack on Beersheba to be a feasible operation.</text> 
+                <text>There were various deceptions that were employed so that the enemy would keep thinking the attack was going to be at Gaza. They even kept the infantry strength there until the last minute. 1,000 Turkish riflemen, nine machine guns and two aircraft defended Beersheba. The trenches on the east and south side were not protected by barbed wire. This was because the Turks believed that the forbidding open terrain with lack of water would defend Beersheba. Gaza was the most likely choice for the attack which meant they were not prepared for the troops.</text>
+                <text>Light horsemen were ordered to charge cavalry-style when normally they would ride close to their objective then dismount to fight.</text>
+                <text>The charge was successful, and they were able to take the town before it was destroyed by a retreating Turkish force. According, to Harry Langtip, Beersheeba was a small town that had many nice buildings. The water scheme was impressive, and they got what they needed from the Turkish store such as telephones and pack saddles. They also got grain for the horses, bivy sheets and peg posts from the army stores. The soldiers got more horses and bullocks. Gear and rifles were lying everywhere. The Turks left bombs which would explode when you kicked it. One tommie had both his eyes blown out by a bottle when he kicked it out of the way.</text>
             </battle>
             <battle>
                 <name>Gaza</name>
@@ -277,12 +364,31 @@
                 <latitude>31.5</latitude>
                 <year>1917</year>
                 <casualties>32</casualties>
+                <text>Gaza was the place of three battles in 1917 and was the heart of the main Turkish defensive position in southern Palestine.</text>
+                <text>Anzac Mounted Division entered Gaza during the first battle on 26-27 March. As it neared nightfall, however, they learned that Turks were getting reinforcement and they were ordered to withdraw.</text>
+                <text>The second attack which occurred three weeks later also failed, despite having gas bombs and tanks.</text>
+                <text>The first attack on Gaza, despite ultimately failing, was declared a success at the time because the Turks suffered a high number of casualties and many of their guns were captured.</text>
+                <text>During the second attempt to take Gaza the tanks were used for the very first time in the Middle East.</text>
+                <text>They proved to be useless as they were ineffective and also dangerous as they drew enemy fire.</text>
+                <text>General Chauvel of the Light Horse kept in touch with the battle of Romani on horseback, often under heavy artillery fire, while many other senior British officers were kilometres from the action, staying in touch only by telephones. He was knighted for his fine leadership.</text>
+                <text>As the British launched their attack on the key Turkish fortress town of Gaza in March 1917 it became more obvious that there were problems of leadership.</text>
+                <text>Fog and poor communication between some British officers delayed the attack.</text>
+                <text>When the attack finally began the light horsemen swung behind the main Turkish positions and fought the Turks in a maze of tall cactus hedges that marked the fields on the outskirts of Gaza and laneways.</text>
+                <text>The troopers hacked through them with their bayonets and shots exploded from the fleshy cactus walls to reach the enemy.</text> 
+                <text>Before sunset, they had fought their way into the town and the Turkish commander thought the battle was lost.</text>
+                <text>British headquarters received word that the Turkish reinforcements were on the way. The order was then made to withdraw just as they took the major Turkish strongpoint.</text>
+                <text>Some of the Light Horse officers refused to believe the orders, while Chauvel protested. They had entered Gaza and found water for their horses. They initially believed the order was an enemy trick, however, the signal came back: “Retire! Retire! Retire!”</text>
+                <text>In the darkness, they slipped away from Gaza, with many of the men asleep in their saddles.</text>
+                <text>General Murray, the British commander, reported the battle to London as if it was a victory. The next month Gaza was attacked again.</text>
             </battle>
             <battle>
                 <name>Jerusalem</name>
                 <longitude>35.2</longitude>
                 <latitude>31.8</latitude>
                 <year>1917</year>
+                <text>Just before Christmas 1917 Jerusalem fell to the British and Australians.</text>
+                <text>Many Australians were excited about glimpsing the holy city for the first time as the wrote about it in their letters and diaries. They were all aware of the historical and religious significance of Jerusalem.</text>
+
             </battle>
         </markers>
     </country>
@@ -348,7 +454,10 @@
                 <text>Despite this, Australians were able to meet the objectives with the support of heavy artillery and hold off the enemy counter-attacks.</text>
                 <text>The line was pushed forward by a few kilometres as they stayed within range of the supporting artillery and advanced step-by-step. This, however, was not done without heavy cost.</text>
                 <text>The town of Ypres was deserted by its inhabitants and devasted by shellfire.</text>
-                
+                <text>Australians enjoyed a break from the front, following Bullecourt, and were able to rest, refit and train. The British launched a major offensive in Flanders, at Ypres, at the end of July 1917. Although the advances were successful in the beginning, they soon were bogged down under stiffening enemy resistance and wet conditions. The ground fortunately dried by September and the Australian divisions were brought in.</text>
+                <text>20 men incredibly reached the rubble that used to be Passchendaele church, mainly because of the valour of Captain Jeffries. The British troops on their right, unfortunately, were not able to support that Australians. This forced them to retreat all the way back to their front line. Artillery was running out of ammunition and their shells were burying themselves in the liquid mud.</text>
+                <text>The battle, however, continued, while it was raining and the bitter cold set in. Another attack was ordered, which failed miserably as the men struggled up to their knees and waists in the stinking mud with their machine guns and rifles clogged.</text>
+
             </battle>
             <battle>
                 <name>Messines</name>
