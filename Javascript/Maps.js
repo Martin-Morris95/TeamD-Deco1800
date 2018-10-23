@@ -1,4 +1,4 @@
-var serverSide = false;
+var serverSide = true;
 var markers = [];
 var map;
 var root;
@@ -10,6 +10,7 @@ var territoryManager;
 var deploymentManager;
 
 $(document).ready(function() {
+  
   $("#backButton").click(function() {
     current.hideChildren();
     current.hideChildrenPopups();
@@ -611,7 +612,7 @@ new google.maps.LatLng(18.131204401694994, 41.58567724434852),
 new google.maps.LatLng(16.93648213075802, 42.617023709515934),
 new google.maps.LatLng(15.374772719568043, 42.748859647015934),
 new google.maps.LatLng(12.867343816845834, 43.276203397015934)];
-var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
+var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0,fillColor:'#FF0000',fillOpacity:0.35, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
 var territory = new Territory(polyline);
@@ -705,7 +706,7 @@ new google.maps.LatLng(51.96826451771474, 4.0503759167905855),
 new google.maps.LatLng(51.737539034111904, 4.2481298230405855),
 new google.maps.LatLng(51.655823921262666, 3.6988134167905855),
 new google.maps.LatLng(51.21751478629626, 2.6441259167905855)];
-var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
+var polyline = new google.maps.Polygon({path:path,fillColor:'#FF0000',fillOpacity:0.35, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
 var territory = new Territory(polyline);
@@ -759,7 +760,7 @@ new google.maps.LatLng(11.270848158301568, 3.298304779961427),
 new google.maps.LatLng(6.4089672142475145, 2.770961029961427),
 new google.maps.LatLng(6.234254872412507, 4.704554779961427),
 new google.maps.LatLng(4.396568749419022, 5.407679779961427)];
-var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
+var polyline = new google.maps.Polygon({path:path,fillColor:'#FF0000',fillOpacity:0.35, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
 var territory = new Territory(polyline);
@@ -786,7 +787,7 @@ new google.maps.LatLng(-8.242745651210223, 30.927570584515934),
 new google.maps.LatLng(-9.241731892458551, 32.861164334515934),
 new google.maps.LatLng(-9.50188414655556, 34.003742459515934),
 new google.maps.LatLng(-10.324371546215447, 34.706867459515934)];
-var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
+var polyline = new google.maps.Polygon({path:path, fillColor:'#FF0000',fillOpacity:0.35,strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
 var territory = new Territory(polyline);
@@ -2288,12 +2289,15 @@ function createPopupContent(title, text, statistics, year) {
   content.removeAttribute("id");
   content.classList.remove("template");
   var h = content.getElementsByTagName("h2")[0];
-  h.innerHTML = title;
+  h.innerHTML = 'Battle of ' + title + ' ('+year+')';
   var mainText = content.getElementsByClassName("popupText")[0];
   var handleText = function(p) {
     var paragraph = document.createElement("p");
-    paragraph.innerHTML = p;
+    var breakdiv = document.createElement("BR");
+    paragraph.innerHTML = '&diams; '+p;
     mainText.appendChild(paragraph);
+    mainText.appendChild(breakdiv);
+    mainText.appendChild(breakdiv);
   }
   if(text instanceof Array) {
     text.forEach(handleText);
@@ -2307,12 +2311,11 @@ function createPopupContent(title, text, statistics, year) {
   });*/
   var stats = content.getElementsByClassName("stats")[0];
   for(var key in statistics) {
-    var stat = document.createElement("h4");
-    stat.innerHTML = key;
-    stats.appendChild(stat);
-    var value = document.createElement("p");
-    value.innerHTML = statistics[key];
+    var value = document.createElement("h3");
+   
+    value.innerHTML = '<Strong>Casualties: ' + statistics[key]+'</Strong>';
     stats.appendChild(value);
+      
   }
   return content;
 }

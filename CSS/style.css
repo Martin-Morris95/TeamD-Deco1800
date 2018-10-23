@@ -1,5 +1,6 @@
 /*imports----------------------------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 /*end imports------------------------------------------------------------------------------*/
 
 /*CSS Doc*/
@@ -191,45 +192,63 @@ footer ul{
 .popup{
 	position: absolute;
 	z-index: 1;
-	background-color: lightgray;
+	background-color: #222222;
 	padding: 5px;
 	border-radius: 2px;
 	left: 50%;
-	top: 40%;
+	top: 50%;
 	transform: translate(-50%,-50%);
-	height: 50%;
-	width: 50%;
+	height: 70%;
+	width: 40%;
+    
+  
+}
+#textContainer{
+    padding:0% 10%;
+    
+}
+.popupText{
+    overflow-y: scroll ;
+    word-wrap: break-word;
+    height: 450px;
+    border: 5px solid black;
+    padding:25px;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: white;
 }
 
-.popup h2, .popup h3{
+#headerPopup{
+    display: flex;
+    justify-content: space-between;
+}
+.popup h2{
 	text-transform: capitalize;
 	font-variant: small-caps;
+    text-align: center;
+    margin-top: 25px;
+    font-family: 'Rubik', sans-serif;
+    color:white;
+    font-style: bold;
+    
 }
 
-.popup .stats{
-	display: grid;
-	grid-template-columns: auto 1fr;
-}
-
-.popup .stats h4{
+.popup h3{
 	text-transform: capitalize;
 	font-variant: small-caps;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Rubik', sans-serif;
+    color:white;
+    font-style: bold;
 }
 
-.popup .stats h4::after{
-	content: ":";
-}
 
-.popup .stats p{
-	margin-left: 5px;
-}
 
 .question{
     background-color: #222;
     display: inline;
     flex-direction: row;
     transform: translate(0%, -100%);
-   
   
 }
 
