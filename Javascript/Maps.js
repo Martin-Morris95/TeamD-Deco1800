@@ -1949,7 +1949,7 @@ root.addChild(franceDeploy);
     root.addChild(turkey);
     root.addChild(france);
     var stats = {"casualties" : "115000", "involved" : "Australia, Britain, New Zealand, Turkey"};
-    var popupContent = createPopupContent("Gallipoli", ["Lorem Ipsum"], stats);
+    var popupContent = createPopupContent("Gallipoli", ["Lorem Ipsum"], stats, 1914);
     var popup = new Popup(popupContent);
     var gallipoli = new Marker(40.3, 26.5, [1914], 7, null, popup);
     var marker1 = new Marker(50, 50, [], 6);
@@ -2090,7 +2090,7 @@ function setMarkerFocus(marker, zoom) {
   })
 }
 
-function createPopupContent(title, text, statistics) {
+function createPopupContent(title, text, statistics, year) {
   var content = document.getElementById("popupTemplate").cloneNode(true);
   content.removeAttribute("id");
   content.classList.remove("template");
@@ -2213,9 +2213,9 @@ function getMarkers() {
         var handleBattle = function(battle) {
           var stats = {};
           stats["casualties"] = battle.casualties || "unknown";
-          var popupContent = createPopupContent(battle.name, battle.text || [], stats);
-          var popup = new Popup(popupContent);
           var year = parseInt(battle.year);
+          var popupContent = createPopupContent(battle.name, battle.text || [], stats, year);
+          var popup = new Popup(popupContent);
           var tempBattle = new Marker(parseFloat(battle.latitude), parseFloat(battle.longitude), [year], 7, "Images/BattleMarker.png", popup);
           tempBattle.hide();
           tempCountry.addChild(tempBattle);
