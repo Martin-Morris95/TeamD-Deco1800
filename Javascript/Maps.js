@@ -257,7 +257,7 @@ $('input[type=checkbox]').change(function(){
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), { center: {lat: 31, lng: 68},
-          zoom: 8, disableDefaultUI: true, mapTypeId: 'terrain',zoomControl: false,
+          zoom: 6, disableDefaultUI: true, mapTypeId: 'terrain',zoomControl: false,
           scaleControl: false,scrollwheel: false,disableDoubleClickZoom: true,});
 
   
@@ -1530,7 +1530,7 @@ polyline.setMap(map);
 shapes.push(polyline);
     */
 //1918 territories ---------------------------------------------------------------------------------------------
-/*
+
 var shapes = [];
 
 var path = [
@@ -1841,12 +1841,12 @@ new google.maps.LatLng(-10.324371546215447, 34.706867459515934)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
-*/
+
 //End of 2018 Territories----------------------------------------------------------------------
 
     
 //-DEPLOYMENT 2014
-    /*
+    
 var shapes =[];
 var path = [
 new google.maps.LatLng(-24.01766347244327, 114.17641239405543),
@@ -1877,9 +1877,9 @@ shapes.push(polyline);
 root = new Root(2.5);
 var egyptDeploy = new Marker(25.677424360049447, 34.463680434893035, [1914], 6, "Images/DeployMarker.png");
 root.addChild(egyptDeploy);
-    */
+    
 //-DEPLOYMENT 2015
-/*
+
 var shapes = [];
 var path = [
 ];
@@ -1909,9 +1909,9 @@ shapes.push(polyline);
 root = new Root(2.5);
 var gallipoliDeploy = new Marker(40.419097797877555, 26.660393332790363, [1915], 6, "Images/DeployMarker.png");
 root.addChild(gallipoliDeploy);
-*/  
+
 //-Deployment 2016
-/*
+
 var shapes = [];
 var path = [
 ];
@@ -1937,7 +1937,7 @@ shapes.push(polyline);
 root = new Root(2.5);
 var franceDeploy = new Marker(43.54347312782956, 3.8796907402235092, [1916], 6, "Images/DeployMarker.png");
 root.addChild(franceDeploy);
-*/
+
 //Deployment end-----------------------------------------------------------------------------------------
     
   if(serverSide) {
@@ -1992,7 +1992,7 @@ root.addChild(franceDeploy);
       ["Which soldier that fought at Gallipoli invented the periscope rifle (Gallipoli)","Lance Corporal William Beech"],
       ["Was Gallipoli Australia’s first major battle","Yes"],
       ["How Many casualties were there in the battle of Pine, Israel","2000"],
-      ["What date did the battle of 1915 Pine, Israel take place","6th of August "],
+      ["What date did the battle of Pine, Israel (1915) take place","6th of August "],
       ["What time did the Australians use artillery bombardment in Israel against Turkish positions","4:30pm"],
       ["How Many casualties were there in the battle of Nek, Israel, 1915","234"],
       ["What animals were used in the battle of Nek, Israel 1915","Horses"],

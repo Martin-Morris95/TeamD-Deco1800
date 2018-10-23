@@ -84,26 +84,15 @@
                 <label class="toggleLabel" for="deployment"></label>
               </div>
               <div class="block">
-                <span>TERRITORIES</span>
-                <input class = "toggleInput" data-index="2" id="territories" type="checkbox" checked="true" />
-                <label class="toggleLabel" for="territories"></label>
+                <span>ENEMY</span>
+                <input class = "toggleInput" data-index="2" id="enemy" type="checkbox" checked="true" />
+                <label class="toggleLabel" for="enemy"></label>
               </div>
             </div>
                
         </div>
         
-		<div id = "questions" class="whiteTextLarge">
-			<div id="questionTemplate" class="template">
-				<!--<p></p>-->
-				<form>
-					<fieldset>
-						<label></label>
-						<input type="text" class="questionText">
-						<button type="submit" class="questionButton whiteTextLarge">Submit</button>
-					</fieldset>
-				</form>
-			</div>
-		</div>
+		
         
         
         <div id = "timeline">
@@ -120,7 +109,19 @@
 		<script src= "Javascript/Maps.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6yDELatMm6K5DVXRZeo4rKEsQd1MR7NU&callback=initMap"async defer></script>
 		<footer class = "site-footer">
-			<p class = "whiteTextLarge">TEAM D&copy;</p>
+            <div id = "questions" class="whiteTextLarge">
+			<div id="questionTemplate" class="template">
+				
+				<form>
+					<fieldset>
+						<label></label>
+						<input type="text" class="questionText">
+						<button type="submit" class="questionButton blackLargeText pulse">Submit</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+			
 		</footer>
                
         

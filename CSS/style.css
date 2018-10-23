@@ -54,7 +54,7 @@ html, body {
 	background-color:#222222;
     overflow: hidden;
 	width:100%;
-    height:10%;
+    
 	
 }
 #logoContainer{
@@ -64,7 +64,7 @@ html, body {
 }
 
 nav{
-  height: 100px;
+  height: 80px;
   display:flex;
   align-items: stretch;
   
@@ -79,7 +79,7 @@ nav{
 #navbar li{
     display:block;
     background-color: black; /* Green */
-    padding: 15px 60px;
+    padding: 5px 60px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -123,7 +123,7 @@ footer ul{
 
 #logo{
     margin:10px;
-    height:80px;
+    height:60px;
     display:block;
 }
 
@@ -228,10 +228,9 @@ footer ul{
     background-color: #222;
     display: inline;
     flex-direction: row;
-    position: absolute;
-    top: 100%;
     transform: translate(0%, -100%);
-    padding: 25px;
+   
+  
 }
 
 .question p{
@@ -243,14 +242,17 @@ footer ul{
 }
 
 .question button, #back button{
-    background-color: #000;
+    background-color: white;
+    border-radius: 30%;
     border: none;
     padding: 10px;
     transition: background-color 1s;
+    margin-left: 15px;
 }
 
 .question button:hover, #back button:hover{
-    background-color: #494949;
+    background-color: darkseagreen;
+    cursor: pointer;
 }
 
 .question label::after{
@@ -261,16 +263,18 @@ footer ul{
 	display: none;
 }
 
+
 #timeline{
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 85%;
+
     left: 50%;
     transform: translate(-50%, -100%);
     padding: 10px 10px 5px 10px;
-    background-color: rgba(53,53,53,0.5);
-    border-radius: 10px;
+     background-color: #222222;
+    border-top-right-radius: 10px;
+     border-top-left-radius: 10px;
 }
 
 #timeline p{
