@@ -1,4 +1,4 @@
-var serverSide = true;
+var serverSide = false;
 var markers = [];
 var map;
 var root;
@@ -6,6 +6,7 @@ var current;
 var showBattles = false;
 var showTerritories = false;
 var showDeployment = false;
+var territoryManager;
 
 $(document).ready(function() {
   $("#backButton").click(function() {
@@ -25,7 +26,9 @@ $(document).ready(function() {
   $("#timeline p").click(function() {
     $(".current").removeClass("current");
     $(this).addClass("current");
-    root.setCurrentYear(parseInt($(this).text()));
+    var year = parseInt($(this).text());
+    root.setCurrentYear(year);
+    territoryManager.changeYear(year);
     current.showChildren();
   })
 })
@@ -357,8 +360,50 @@ function initMap() {
       
 map.set('styles', retroStyle);
  
+function Territory(shape) {
+  this.shape = shape;
+}
+
+Territory.prototype.hide = function() {
+  this.shape.setMap(null);
+}
+
+Territory.prototype.show = function() {
+  this.shape.setMap(map);
+}
+
+function TerritoryManager(years, currentYear) {
+  this.territories = {};
+  this.year = currentYear;
+  years.forEach(function(year) {
+    this.territories[year] = [];
+  }.bind(this));
+}
+
+TerritoryManager.prototype.addTerritory = function(year, territory) {
+  if(this.territories[year] == null) {
+    this.territories[year] = [];
+  }
+  this.territories[year].push(territory);
+  if(year != this.year) {
+    territory.hide();
+  }
+}
+
+TerritoryManager.prototype.changeYear = function(newYear) {
+  this.territories[this.year].forEach(function(territory) {
+    territory.hide();
+  });
+  this.year = newYear;
+  this.territories[newYear].forEach(function(territory) {
+    territory.show();
+  })
+}
+
+territoryManager = new TerritoryManager([1914, 1915, 1916, 1917, 1918], 1914);
+
 //1914 Territories-------------------------------------------------------------------------------------
-/*
+
 var shapes = [];
 var path = [
 new google.maps.LatLng(12.600821132255435, 43.791418059509965),
@@ -534,6 +579,8 @@ new google.maps.LatLng(12.867343816845834, 43.276203397015934)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1914, territory);
     
 var path = [
 new google.maps.LatLng(51.09909115807639, 2.5111404848881875),
@@ -626,6 +673,8 @@ new google.maps.LatLng(51.21751478629626, 2.6441259167905855)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1914, territory);
 
 var path = [
 ];
@@ -659,6 +708,8 @@ new google.maps.LatLng(-27.259662930450887, 15.22650577196157)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1914, territory);
     
 var path = [
 new google.maps.LatLng(4.747012109930874, 8.571742279961427),
@@ -676,6 +727,8 @@ new google.maps.LatLng(4.396568749419022, 5.407679779961427)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1914, territory);
 
         
 var path = [
@@ -701,10 +754,12 @@ new google.maps.LatLng(-10.324371546215447, 34.706867459515934)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
-*/
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1914, territory);
+
 //1914 territories end -----------------------------------------------------------------------------------------
 //1915 territories ---------------------------------------------------------------------------------------------
-/*
+
 var shapes = [];
 var path = [
 ];
@@ -929,6 +984,8 @@ new google.maps.LatLng(54.86015795571547, 8.605370942916693)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0,fillColor:'#FF0000',fillOpacity:0.35, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1915, territory);
     
 //Below is same as 1914////////////////////////////////////////////////////////////////////////!!!!!!!!!!!!!!!!!
 var path = [
@@ -961,6 +1018,8 @@ new google.maps.LatLng(-27.259662930450887, 15.22650577196157)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1915, territory);
     
 var path = [
 new google.maps.LatLng(4.747012109930874, 8.571742279961427),
@@ -978,6 +1037,8 @@ new google.maps.LatLng(4.396568749419022, 5.407679779961427)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1915, territory);
 
         
 var path = [
@@ -1003,10 +1064,12 @@ new google.maps.LatLng(-10.324371546215447, 34.706867459515934)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
-*/
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1915, territory);
+
 //1915 territories end ----------------------------------------------------------------------------------------
 //1916 territories ---------------------------------------------------------------------------------------------
-/*
+
 var shapes = [];
 var path = [
 new google.maps.LatLng(35.82595510092581, 45.74242230015466),
@@ -1150,6 +1213,8 @@ new google.maps.LatLng(37.056825244983756, 44.949066649267024)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0,fillColor:'#FF0000',fillOpacity:0.35, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1916, territory);
     
 //Below is same as 1914////////////////////////////////////////////////////////////////////////!!!!!!!!!!!!!!!!!
 var path = [
@@ -1182,6 +1247,8 @@ new google.maps.LatLng(-27.259662930450887, 15.22650577196157)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1916, territory);
     
 var path = [
 new google.maps.LatLng(4.747012109930874, 8.571742279961427),
@@ -1199,6 +1266,8 @@ new google.maps.LatLng(4.396568749419022, 5.407679779961427)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1916, territory);
 
         
 var path = [
@@ -1224,9 +1293,10 @@ new google.maps.LatLng(-10.324371546215447, 34.706867459515934)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
-*/
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1916, territory);
 //1917 territories ---------------------------------------------------------------------------------------------
-/*
+
 var shapes = [];
 var path = [
 new google.maps.LatLng(36.30799006617505, 45.21861401780234),
@@ -1455,6 +1525,8 @@ new google.maps.LatLng(37.08495155499368, 44.67759056473028)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0,fillColor:'#FF0000',fillOpacity:0.35, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1917, territory);
     //Below is same as 1914////////////////////////////////////////////////////////////////////////!!!!!!!!!!!!!!!!!
 var path = [
 new google.maps.LatLng(-28.6955544447906, 16.32513858446157),
@@ -1486,6 +1558,8 @@ new google.maps.LatLng(-27.259662930450887, 15.22650577196157)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1917, territory);
     
 var path = [
 new google.maps.LatLng(4.747012109930874, 8.571742279961427),
@@ -1503,6 +1577,8 @@ new google.maps.LatLng(4.396568749419022, 5.407679779961427)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1917, territory);
 
         
 var path = [
@@ -1528,7 +1604,8 @@ new google.maps.LatLng(-10.324371546215447, 34.706867459515934)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
-    */
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1917, territory);
 //1918 territories ---------------------------------------------------------------------------------------------
 
 var shapes = [];
@@ -1768,6 +1845,8 @@ new google.maps.LatLng(58.884086107659314, 23.37890060071379)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000", strokeOpacity: 1.0,fillColor:'#FF0000',fillOpacity:0.35, strokeWeight: 2,fillColor: '#FF0000',fillOpacity: 0.35});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territoryManager.addTerritory(1918, territory);
 //Below is same as 1914////////////////////////////////////////////////////////////////////////!!!!!!!!!!!!!!!!!
 var path = [
 new google.maps.LatLng(-28.6955544447906, 16.32513858446157),
@@ -1799,6 +1878,9 @@ new google.maps.LatLng(-27.259662930450887, 15.22650577196157)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territory.hide();
+territoryManager.addTerritory(1918, territory);
     
 var path = [
 new google.maps.LatLng(4.747012109930874, 8.571742279961427),
@@ -1816,6 +1898,9 @@ new google.maps.LatLng(4.396568749419022, 5.407679779961427)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territory.hide();
+territoryManager.addTerritory(1918, territory);
 
         
 var path = [
@@ -1841,6 +1926,9 @@ new google.maps.LatLng(-10.324371546215447, 34.706867459515934)];
 var polyline = new google.maps.Polygon({path:path, strokeColor: "#FF0000",fillColor:'#FF0000',fillOpacity:0.35, strokeOpacity: 1.0, strokeWeight: 2});
 polyline.setMap(map);
 shapes.push(polyline);
+var territory = new Territory(polyline);
+territory.hide();
+territoryManager.addTerritory(1918, territory);
 
 //End of 2018 Territories----------------------------------------------------------------------
 
