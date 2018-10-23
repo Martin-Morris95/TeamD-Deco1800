@@ -200,6 +200,7 @@ Question = function(question, answer, getNextQuestion, correct) {
 Question.prototype.answerQuestion = function() {
   var ans = this.content.getElementsByTagName("input")[0].value;
   if(ans == this.answer) {
+    var question = this.question;
     var nextQuestion = this.getNextQuestion();
     if(nextQuestion != null) {
       this.changeQuestion(nextQuestion[0], nextQuestion[1]);
@@ -208,7 +209,7 @@ Question.prototype.answerQuestion = function() {
     else {
       this.content.classList.add("hidden");
     }
-    this.correct();
+    this.correct(question);
   }
   else {
     alert("Incorrect");
@@ -2014,6 +2015,9 @@ root.addChild(franceDeploy);
       ["Who captured the town of Peronne France in 1918","The ANZACs"]
   ];
 
+  var answeredQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+  questions = questions.filter(x => answeredQuestions.indexOf(x[0]) == -1);
+
   var getNextQuestion = function() {
     if(questions.length == 0) {
       console.log("no questions left");
@@ -2033,7 +2037,8 @@ root.addChild(franceDeploy);
   }   
   
   var q = getNextQuestion();
-  var question = new Question(q[0], q[1], getNextQuestion, correct);
+  if(q != null)
+    var question = new Question(q[0], q[1], getNextQuestion, correct);
   // and other stuff...
   /*
   $("#search #submit").click(function(event) {
@@ -2119,7 +2124,11 @@ function createPopupContent(title, text, statistics) {
   return content;
 }
 
-function correct() {
+function correct(question) {
+  var answeredQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+  answeredQuestions.push(question);
+  localStorage.setItem("questions", JSON.stringify(answeredQuestions));
+
   var unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
   if(!unlockedCards) {
    // unlockedCards = [44, 30, 24, 14, 43];
@@ -2176,6 +2185,7 @@ function unlockCard() {
   localStorage.setItem("unlockedCards", JSON.stringify(unlockedCards));
   localStorage.setItem("lockedCards", JSON.stringify(lockedCards));
   */
+
   lockedCards = JSON.parse(localStorage.getItem("lockedCards"));
   unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
   var index = Math.floor(Math.random() * lockedCards.length)
