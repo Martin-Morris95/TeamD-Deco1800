@@ -1,4 +1,4 @@
-var serverSide = false;
+var serverSide = true;
 var markers = [];
 var map;
 var root;
@@ -2201,7 +2201,7 @@ function unlockCard() {
 
 function getMarkers() {
   $.ajax({
-    url: "php/markers.php",
+    url: "PHP/markers.php",
     dataType: "json",
     cache: true,
     success: function(data) {
