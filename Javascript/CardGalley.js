@@ -49,11 +49,12 @@ $(document).ready(function() {
 
                 //if(id == "44" || id == "30" || id == "24" || id == "14" || id == "43"){
                 if(unlockedCards.indexOf(id) != -1){
-                      $("#cardContainer").append('<div class = "card"><img class ="portrait" src = "'+image+'"></img><p class = "soldierName whiteTextLarge">'+ name+'</p></div>');
-                }else{
-                    $("#cardContainer").append('<div class = "card"><a class="strip" href = '+highRes+' data-strip-caption='+
+                                         
+                     $("#cardContainer").append('<div class = "card"><a class="strip" href = '+highRes+' data-strip-caption='+
                                                '"Photo of: '+ name + ' (' + dateTaken + ')\n Served in the: ' + militaryDetails 
-                                               +'"><img class ="portrait lockedCard" src = "'+image+'"></img></a><p class = "soldierName whiteTextLarge">'+ name+'</p></div>');
+                                               +'"><img class ="portrait" src = "'+image+'"></img></a><p class = "soldierName whiteTextLarge">'+ name+'</p></div>');
+                }else{
+                    $("#cardContainer").append('<div class = "card"><img class ="portrait lockedCard" src = "'+image+'"></img><p class = "soldierName whiteTextLarge">'+ name+'</p></div>');
                     
                     
                 }
