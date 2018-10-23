@@ -23,8 +23,17 @@ $(document).ready(function() {
 
     function populateCards(data){
         
-        $.each(data.result.records, function(recordKey, recordValue) {
+        $.each(data.result.records, function(recordKey, recordValue) {            
             var image = recordValue["Thumbnail image"];
+            var highRes = recordValue["High resolution image"];
+            var militaryDetails = recordValue["Military Details"];
+            if(militaryDetails == ""){
+                militaryDetails = "unkown";
+            }
+            var dateTaken = recordValue["Temporal"];
+            if(dateTaken == ""){
+                dateTaken = "unkown";
+            }
             var id = recordValue["_id"];
             var title = recordValue["Title of image"];
             //get name out of title
@@ -42,7 +51,11 @@ $(document).ready(function() {
                 if(unlockedCards.indexOf(id) != -1){
                       $("#cardContainer").append('<div class = "card"><img class ="portrait" src = "'+image+'"></img><p class = "soldierName whiteTextLarge">'+ name+'</p></div>');
                 }else{
-                    $("#cardContainer").append('<div class = "card"><img class ="portrait lockedCard" src = "'+image+'"></img><p class = "soldierName whiteTextLarge">'+ name+'</p></div>');
+                    $("#cardContainer").append('<div class = "card"><a class="strip" href = '+highRes+' data-strip-caption='+
+                                               '"Photo of: '+ name + ' (' + dateTaken + ')\n Served in the: ' + militaryDetails 
+                                               +'"><img class ="portrait lockedCard" src = "'+image+'"></img></a><p class = "soldierName whiteTextLarge">'+ name+'</p></div>');
+                    
+                    
                 }
              
             }

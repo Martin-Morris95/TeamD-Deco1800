@@ -49,14 +49,20 @@ function showCard(unlockedCard){
     
     function populateCards(data, unlockedCard){
         var RandomCard;
+        var dateTaken ="";
+        var militaryDetails ="";
         var image = "";
+        var highRes ="";
         var name = "";
         var title ="";
         var words;
         
        // RandomCard = data.result.records[Math.floor(Math.random() * (62))];
         RandomCard = data.result.records.filter(x => x['_id'] == unlockedCard)[0];
+        dateTaken = RandomCard["Temporal"];
+        militaryDetails = RandomCard["Military Details"];
         image = RandomCard["Thumbnail image"];
+        highRes = RandomCard["High resolution image"];
         title = RandomCard["Title of image"];
         words = title.split(" ");
         if(words != ""){
