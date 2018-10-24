@@ -1,24 +1,4 @@
 $(document).ready(function() {
-    /*
-        function Node(zoom) {
-      this.zoom = zoom;
-      this.children = [];
-    }
-    
-        function showBack() {
-      $("#back").removeClass("hidden");
-    }
-
-    function hideBack() {
-      $("back").addClass("hidden");
-    }
-  var stat = document.createElement("h4");
-    stat.innerHTML = key;
-    stats.appendChild(stat);
-    var value = document.createElement("p");
-    value.innerHTML = statistics[key];
-    stats.appendChild(value);
-*/
     var _data;
 
     function populateCards(data){
@@ -47,7 +27,6 @@ $(document).ready(function() {
             if(image !=""){
                 var unlockedCards = JSON.parse(localStorage.getItem("unlockedCards"));
 
-                //if(id == "44" || id == "30" || id == "24" || id == "14" || id == "43"){
                 if(unlockedCards.indexOf(id) != -1){
                                          
                      $("#cardContainer").append('<div class = "card"><a class="strip" href = '+highRes+' data-strip-caption='+

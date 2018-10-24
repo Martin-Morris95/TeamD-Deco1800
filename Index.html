@@ -4,21 +4,10 @@
 		<meta charset = "utf-8">
 		<link rel = "stylesheet" type="text/css" href = "CSS/style.css">
 
-		<title>World Conflict</title>
-
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-  				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-				  crossorigin="anonymous"></script>
-        
-        <!--google maps script-->
-        
-       
-        
-           
+		<title>World Conflict</title>        
 	</head>
     
-	<body>
-        
+	<body>   
 		<header id="menu">
 			<a class= "link" href = 'index.html'>
                 <figure id="logoContainer">
@@ -40,17 +29,6 @@
                     </a>
 				</ul>
 			</nav>
-            <!--
-			<form id="search">
-				<fieldset>
-					<label for="longitude_text">Longitude</label>
-					<input type="text" id="longitude_text">
-					<label for="latitude_text">Latitude</label>
-					<input type="text" id="latitude_text">
-					<button type="button" id="submit">Search</button>
-				</fieldset>
-			</form>
-            -->
 		</header>
 		 
 		<form id="back" class="hidden">
@@ -58,6 +36,7 @@
 		</form>
 
 		<div id = "popups">
+            
 			<div id="popupTemplate" class="template">
                 <h2></h2>
                 <div class="stats"></div>
@@ -90,12 +69,8 @@
                 <input class = "toggleInput" data-index="2" id="enemy" type="checkbox" checked="true" />
                 <label class="toggleLabel" for="enemy"></label>
               </div>
-            </div>
-               
+            </div>         
         </div>
-        
-		
-        
         
         <div id = "timeline">
             <p class="current blackTextLarge"><strong>1914</strong></p>
@@ -103,10 +78,11 @@
             <p class = "blackTextLarge"><strong>1916</strong></p>
             <p class = "blackTextLarge"><strong>1917</strong></p>
             <p class = "blackTextLarge"><strong>1918</strong></p>
-        </div>
-      
+        </div>   
               
-        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  				integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+				crossorigin="anonymous"></script>
 		<script src ="Javascript/CardUnlock.js"></script>
 		<script src= "Javascript/Maps.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6yDELatMm6K5DVXRZeo4rKEsQd1MR7NU&callback=initMap"async defer></script>

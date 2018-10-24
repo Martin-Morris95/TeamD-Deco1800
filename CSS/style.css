@@ -192,7 +192,6 @@ footer ul{
 .popup{
 	position: absolute;
 	z-index: 1;
-	background-color: #222222;
 	padding: 5px;
 	border-radius: 2px;
 	left: 50%;
@@ -200,9 +199,14 @@ footer ul{
 	transform: translate(-50%,-50%);
 	height: 70%;
 	width: 40%;
-    
+    background: #222222;
   
 }
+#popupTemplate{
+   position: absolute; 
+}
+
+
 #textContainer{
     padding:0% 10%;
     
@@ -214,7 +218,9 @@ footer ul{
     border: 5px solid black;
     padding:25px;
     font-family: 'Roboto Condensed', sans-serif;
-    background: white;
+   
+     background-image: url("../Images/paperTexture.png");
+      background-repeat: repeat-y;
 }
 
 #headerPopup{
@@ -459,9 +465,8 @@ span{
     position: absolute;
     top :15%;
     left:40%;
-    background-color: red;
     width:20%;
-    height:70%;
+    height:60%;
     z-index: 200;
 }
 
