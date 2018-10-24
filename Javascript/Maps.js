@@ -1,4 +1,4 @@
-var serverSide = true;
+var serverSide = false;
 var markers = [];
 var map;
 var root;

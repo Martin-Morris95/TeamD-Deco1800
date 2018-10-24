@@ -1,7 +1,13 @@
 $(document).ready(function() {
+    $("body").click(function() {
+        if($(".unlockedCard.hideCard").length == 0) {
+            $(".unlockedCard").toggleClass("hideCard");
+        }
+    });
+/*
     $(".unlockedCard").click(function() {
         $(".unlockedCard").toggleClass("hideCard");
-    })
+    })*/
 })
 
 function showCard(unlockedCard){
