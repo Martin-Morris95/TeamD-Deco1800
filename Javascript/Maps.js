@@ -325,10 +325,12 @@ Marker.prototype.addYear = function(year) {
 */
 Popup = function(content, hidden=true) {
   this.content = content;
-  this.content.classList.add("popup");
+//  this.content.classList.add("popup");
+  $(content).addClass("popup");
   document.getElementById("popups").appendChild(this.content);
   if(hidden) {
-    this.content.classList.add("hidden");
+//    this.content.classList.add("hidden");
+    $(content).addClass("hidden");
   }
 }
 
@@ -336,14 +338,14 @@ Popup = function(content, hidden=true) {
   Display the popup
 */
 Popup.prototype.show = function() {
-  this.content.classList.remove("hidden");
+  $(this.content).removeClass("hidden");
 }
 
 /*
   Hide the popup
 */
 Popup.prototype.hide = function() {
-  this.content.classList.add("hidden");
+  $(this.content).addClass("hidden");
 }
 
 /*
@@ -357,34 +359,21 @@ Popup.prototype.hide = function() {
     year (number): year to display
 */
 function createPopupContent(title, text, statistics, year) {
-  //copy template
-  var content = document.getElementById("popupTemplate").cloneNode(true);
-  content.removeAttribute("id");
-  content.classList.remove("template");
+  var content = $("#popupTemplate").clone().removeAttr("id").removeClass("template");
   //replace content of element with paramters
-  var h = content.getElementsByTagName("h2")[0];
-  h.innerHTML = 'Battle of ' + title + ' ('+year+')';
-  var mainText = content.getElementsByClassName("popupText")[0];
+  $(content).find("h2").html('Battle of ' + title + ' ('+year+')');
+  var mainText = $(content).find(".popupText");
   var handleText = function(p) {
-    var paragraph = document.createElement("p");
-    var breakdiv = document.createElement("BR");
-    paragraph.innerHTML = '&diams; '+p;
-    mainText.appendChild(paragraph);
-    mainText.appendChild(breakdiv);
-    mainText.appendChild(breakdiv);
+	  $(mainText).append($("<p>").html('&diams; '+p)).append($("<br>")).append($("<br"));
   }
   if(text instanceof Array) {
     text.forEach(handleText);
   } else {
     handleText(text);
   }
-  var stats = content.getElementsByClassName("stats")[0];
+  var stats = $(content).find("stats");
   for(var key in statistics) {
-    var value = document.createElement("h3");
-   
-    value.innerHTML = '<Strong>Casualties: ' + statistics[key]+'</Strong>';
-    stats.appendChild(value);
-      
+    $("<h3>").html('<Strong>Casualties: ' + statistics[key]+'</Strong>').appendTo($(stats));
   }
   return content;
 }
