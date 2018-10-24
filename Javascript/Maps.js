@@ -8,6 +8,7 @@ var showTerritories = false;
 var showDeployment = false;
 var territoryManager;
 var deploymentManager;
+var allowZoom = false;
 
 $(document).ready(function() {
   
@@ -17,13 +18,15 @@ $(document).ready(function() {
     current.hidePopup();
     current = current.getParent();
     current.showChildren();
-    current.changeZoom();
     if(current.isRoot()) {
       $("#back").addClass("hidden"); 
+      map.setOptions({scrollwheel: false, minZoom: null});
+      allowZoom = false;
     }
     else {
       updateMap(current.getPosition().lat(), current.getPosition().lng());
     }
+    current.changeZoom();
   })
   $("#timeline p").click(function() {
     $(".current").removeClass("current");
@@ -84,6 +87,10 @@ Node.prototype.changeZoom = function() {
   return true;
 }
 
+Node.prototype.getZoom = function() {
+  return this.zoom;
+}
+
 Node.prototype.isRoot = function() {
   return false;
 }
@@ -130,6 +137,8 @@ Marker.prototype.click = function(event) {
   if(this.changeZoom()) {
     current = this;
     updateMap(this.marker.getPosition().lat(), this.marker.getPosition().lng());
+    map.setOptions({scrollwheel: true, minZoom: this.zoom});
+    allowZoom = true;
     showBack();
   }
   this.showPopup();
@@ -2174,6 +2183,18 @@ deploymentManager.addItem(1916, deployment);
     root.changeZoom();
     root.showChildren();
     current = root
+/*
+    google.maps.event.addListener(map, 'zoom_changed', function() {
+      console.log(allowZoom);
+      if(allowZoom) {
+        console.log("fjdkl");
+        map.setZoom(1);
+      }
+/*      if(allowZoom)
+      //console.log(allowZoom);
+        map.setZoom(current.getZoom());
+        alert("zoom changed");
+    })*/
   }
 
   var questions = [
