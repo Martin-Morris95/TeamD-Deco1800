@@ -28,6 +28,44 @@
                 <text>Lance Corporal W. C. Scurry of the 7th Battalion, AIF invented the drip rifle with assistance from Private A.H. Lawrence. Scurry was awarded the Distinguished Conduct Medal for his part that he played in making the evacuation a success. He was also mentioned in dispatches and promoted to sergeant</text>
                 <text>Lance Corporal William Beech was an Australian builder’s foreman who invented the periscope rifle. This allowed soldiers to aim their guns without putting them in the direct line of fire.</text>
             </battle>
+            <battle>
+                <name>Lone Pine</name>
+                <longitude>-333.7</longitude>
+                <latitude>40.2</latitude>
+                <year>1915</year>
+                <casualties>2000</casualties>
+                <text>On the 6th of August 1915 in the afternoon the battle of Lone Pine took place.</text>
+                <text>This battle was designed to create a diversion to allow another assault further north to seize the high ground of the Sari Bair Range. This battle was a part of the allied August Offensive, which was the troop's last attempt to break the stalemate that started ever since the landings on 25 April.</text>
+                <text>Artillery bombardment shelled the Turkish positions at 4:30 pm.</text>
+                <text>An hour later, through heavy fire from artillery, rifles and machine guns, Australian’s crossed no man’s land.</text>
+                <text>However, when they reached the Turkish trenches, some had been covered with pine logs and the Australian infantry had to break through the makeshift roofs to get to the enemy.</text>
+                <text>Despite this, the Lone Pine trenches were taken after 20 minutes of fighting, but there followed four days of intense hand-to-hand fighting at a cost of 2,000 Australian and almost 7,000 Turkish casualties. Seven Australians were awarded the Victoria Cross for their actions that day.</text>
+                <text>The Battle of Lone Pine is considered to be one of the few allied successes of the Gallipoli campaign, even though Australians were driven back from the trenches several days later by the Turks.</text>
+                <text>Soldiers wore white armbands and back patches to make the men more visible to each other in the dark so that they weren’t mistaken for the enemy.</text>
+                <text>The Turks seemed to have a large supply of cricket-ball style bombers and were well trained at throwing them, according to Charles Bean. Australian soldiers had no bombs so that had to make them by stuffing old jam tins with pieces of Turkish shell and barbed wire.</text>
+                <text>Bombs were a very powerful weapon for hand-to-hand fighting, as Australians were quickly learning.</text>
+                <text>Sergeant Cyril Lawrence of the Australian Engineers described the battlefield as being one mass of dead bodies, rifles, shovels, bags of bombs and bales of sandbags just to name a few. The undergrowth was cut down, leaving only a few simple stalks and the ground itself appeared just as though someone got a huge rake and scratched it all over.</text>
+            </battle>
+            <battle>
+                <name>Nek</name>
+                <longitude>-333.7</longitude>
+                <latitude>40.24</latitude>
+                <year>1915</year>
+                <casualties>234</casualties>
+                <text>The Nek was where the tragic assault by the 3rd Light Horse Brigade on the 7th of August 1915 at dawn occurred.</text>
+                <text>The Nek was an important position held by the allied forces on the northern end of the Anzac front line.</text>
+                <text>The British destroyer steaming offshore was supposed to bombard the Turkish positions with shells, however, they fell beyond their target.</text>
+                <text>This commenced the attack and was supposed to provide cover for the Australians, however, it ended seven minutes early.</text>
+                <text>The officers of the light horse kept their men back as they waited until the appointed time for the attack which gave the Turkish troops time to re-man their positions.</text>
+                <text>A barrage of Turkish rifle and machine-gun fire immediately shot down the first wave of the light horsemen.</text>
+                <text>The second line was also shot down as they scrambled over the dead and wounded to attack.</text>
+                <text>The Australian officer in charge refused to accept defeat and would not cancel the attack when it was proposed. The third wave of light horsemen was sent over.</text>
+                <text>The cancellation was proposed again, however, before the decision was made and because of a misunderstanding, the right flank of the fourth line charged. The rest followed.</text>
+                <text>The casualties were devasting as 234 were killed and 138 were wounded out of the 600 Australian troops.</text>
+                <text>The movie Gallipoli, starring Mel Gibson as Frank and Mark Lee as Archie, ending shows Archie and his friends climbing over the trenches and charging towards the enemy lines where they were shot down by machine guns. This scene was actually based off the battle of Nek.</text>
+                <text>The personal relationships between a couple of Australian officers were very poor. Cooperation and clear thinking were essential at the time, however, there was no effective communication.</text>
+                <text>During the battle, Australian soldiers showed true courage as they went over the trenches knowing they would most likely be killed.</text>
+            </battle>
         </markers>
     </country>
     <country>
@@ -303,44 +341,6 @@
         <longitude>34.9</longitude>
         <latitude>31</latitude>
         <markers>
-            <battle>
-                <name>Lone Pine</name>
-                <longitude>-333.7</longitude>
-                <latitude>40.2</latitude>
-                <year>1915</year>
-                <casualties>2000</casualties>
-                <text>On the 6th of August 1915 in the afternoon the battle of Lone Pine took place.</text>
-                <text>This battle was designed to create a diversion to allow another assault further north to seize the high ground of the Sari Bair Range. This battle was a part of the allied August Offensive, which was the troop's last attempt to break the stalemate that started ever since the landings on 25 April.</text>
-                <text>Artillery bombardment shelled the Turkish positions at 4:30 pm.</text>
-                <text>An hour later, through heavy fire from artillery, rifles and machine guns, Australian’s crossed no man’s land.</text>
-                <text>However, when they reached the Turkish trenches, some had been covered with pine logs and the Australian infantry had to break through the makeshift roofs to get to the enemy.</text>
-                <text>Despite this, the Lone Pine trenches were taken after 20 minutes of fighting, but there followed four days of intense hand-to-hand fighting at a cost of 2,000 Australian and almost 7,000 Turkish casualties. Seven Australians were awarded the Victoria Cross for their actions that day.</text>
-                <text>The Battle of Lone Pine is considered to be one of the few allied successes of the Gallipoli campaign, even though Australians were driven back from the trenches several days later by the Turks.</text>
-                <text>Soldiers wore white armbands and back patches to make the men more visible to each other in the dark so that they weren’t mistaken for the enemy.</text>
-                <text>The Turks seemed to have a large supply of cricket-ball style bombers and were well trained at throwing them, according to Charles Bean. Australian soldiers had no bombs so that had to make them by stuffing old jam tins with pieces of Turkish shell and barbed wire.</text>
-                <text>Bombs were a very powerful weapon for hand-to-hand fighting, as Australians were quickly learning.</text>
-                <text>Sergeant Cyril Lawrence of the Australian Engineers described the battlefield as being one mass of dead bodies, rifles, shovels, bags of bombs and bales of sandbags just to name a few. The undergrowth was cut down, leaving only a few simple stalks and the ground itself appeared just as though someone got a huge rake and scratched it all over.</text>
-            </battle>
-            <battle>
-                <name>Nek</name>
-                <longitude>-333.7</longitude>
-                <latitude>40.24</latitude>
-                <year>1915</year>
-                <casualties>234</casualties>
-                <text>The Nek was where the tragic assault by the 3rd Light Horse Brigade on the 7th of August 1915 at dawn occurred.</text>
-                <text>The Nek was an important position held by the allied forces on the northern end of the Anzac front line.</text>
-                <text>The British destroyer steaming offshore was supposed to bombard the Turkish positions with shells, however, they fell beyond their target.</text>
-                <text>This commenced the attack and was supposed to provide cover for the Australians, however, it ended seven minutes early.</text>
-                <text>The officers of the light horse kept their men back as they waited until the appointed time for the attack which gave the Turkish troops time to re-man their positions.</text>
-                <text>A barrage of Turkish rifle and machine-gun fire immediately shot down the first wave of the light horsemen.</text>
-                <text>The second line was also shot down as they scrambled over the dead and wounded to attack.</text>
-                <text>The Australian officer in charge refused to accept defeat and would not cancel the attack when it was proposed. The third wave of light horsemen was sent over.</text>
-                <text>The cancellation was proposed again, however, before the decision was made and because of a misunderstanding, the right flank of the fourth line charged. The rest followed.</text>
-                <text>The casualties were devasting as 234 were killed and 138 were wounded out of the 600 Australian troops.</text>
-                <text>The movie Gallipoli, starring Mel Gibson as Frank and Mark Lee as Archie, ending shows Archie and his friends climbing over the trenches and charging towards the enemy lines where they were shot down by machine guns. This scene was actually based off the battle of Nek.</text>
-                <text>The personal relationships between a couple of Australian officers were very poor. Cooperation and clear thinking were essential at the time, however, there was no effective communication.</text>
-                <text>During the battle, Australian soldiers showed true courage as they went over the trenches knowing they would most likely be killed.</text>
-            </battle>
             <battle>
                 <name>Beersheba</name>
                 <longitude>34.8</longitude>
