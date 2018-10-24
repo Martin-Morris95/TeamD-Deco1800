@@ -325,11 +325,9 @@ Marker.prototype.addYear = function(year) {
 */
 Popup = function(content, hidden=true) {
   this.content = content;
-//  this.content.classList.add("popup");
   $(content).addClass("popup");
-  document.getElementById("popups").appendChild(this.content);
+  $("#popups").append($(content));
   if(hidden) {
-//    this.content.classList.add("hidden");
     $(content).addClass("hidden");
   }
 }
@@ -364,14 +362,14 @@ function createPopupContent(title, text, statistics, year) {
   $(content).find("h2").html('Battle of ' + title + ' ('+year+')');
   var mainText = $(content).find(".popupText");
   var handleText = function(p) {
-	  $(mainText).append($("<p>").html('&diams; '+p)).append($("<br>")).append($("<br"));
+	  $(mainText).append($("<p>").html('&diams; '+p)).append($("<br>")).append($("<br>"));
   }
   if(text instanceof Array) {
     text.forEach(handleText);
   } else {
     handleText(text);
   }
-  var stats = $(content).find("stats");
+  var stats = $(content).find(".stats");
   for(var key in statistics) {
     $("<h3>").html('<Strong>Casualties: ' + statistics[key]+'</Strong>').appendTo($(stats));
   }
@@ -393,15 +391,15 @@ Question = function(question, answer, getNextQuestion, correct) {
   
   //create DOM element for question
   this.content = createQuestionContent(question, this.answerQuestion.bind(this));
-  this.content.classList.add("question");
-  document.getElementById("questions").appendChild(this.content);
+//  this.content.classList.add("question");
+  $(this.content).addClass("question").appendTo("#questions");
 }
 
 /*
   Function called when user enters an answer
 */
 Question.prototype.answerQuestion = function() {
-  var ans = this.content.getElementsByTagName("input")[0].value;
+  var ans = $(this.content).find("input").val();
   //check answer
   if(ans == this.answer) {
     var question = this.question;
@@ -410,10 +408,11 @@ Question.prototype.answerQuestion = function() {
     if(nextQuestion != null) {
       //display new question
       this.changeQuestion(nextQuestion[0], nextQuestion[1]);
-      this.content.getElementsByTagName("input")[0].value = "";
+      $(this.content).find("input").val("");
     }
     else {
-      this.content.classList.add("hidden");
+      $(this.content).addClass("hidden");
+//      this.content.classList.add("hidden");
     }
     //unlock a new card
     this.correct(question);
@@ -433,7 +432,7 @@ Question.prototype.answerQuestion = function() {
 Question.prototype.changeQuestion = function(question, answer) {
   this.question = question;
   this.answer = answer;
-  this.content.getElementsByTagName("label")[0].innerHTML = question;
+  $(this.content).find("label").html(question);
 }
 
 /*
@@ -446,14 +445,12 @@ Question.prototype.changeQuestion = function(question, answer) {
 */
 function createQuestionContent(question, callback) {
   //copy templat
-  var content = document.getElementById("questionTemplate").cloneNode(true);
-  content.removeAttribute("id");
-  content.classList.remove("template");
-  //replace content of element with the question
-  content.getElementsByTagName("label")[0].innerHTML = question;
-  //add event listener for submitting answer
-  content.getElementsByTagName("form")[0].addEventListener('submit', function(event) {event.preventDefault(); callback();});
-  
+  var content = $("#questionTemplate").clone().removeAttr("id").removeClass("template");
+  $(content).find("label").html(question);
+  $(content).find("form").submit(function(event) {
+    event.preventDefault();
+    callback();
+  })
   return content;
 }
 
@@ -2462,7 +2459,5 @@ function getMarkers() {
       current = root;
     }
   })
-    
-
 }
 
