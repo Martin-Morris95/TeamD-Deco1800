@@ -198,7 +198,7 @@ Root.prototype.isRoot = function() {
     icon (string): path to marker icon, null if default icon should be used
     popup (DOM element): popup to be displayed if marker is clicked on, null if marker has no popup
 */
-function Marker(latt, long,  year = [], zoom=null, icon=null, popup=null) {
+function Marker(name, latt, long,  year = [], zoom=null, icon=null, popup=null) {
   //Call constructor for Node
   Node.call(this, zoom);
 
@@ -206,7 +206,8 @@ function Marker(latt, long,  year = [], zoom=null, icon=null, popup=null) {
   this.marker = new google.maps.Marker({
     position: {lat: latt, lng: long},
     map: map,
-    icon: icon
+    icon: icon,
+    title: name
   });
   this.parent = null;
   this.popup = popup;
@@ -2431,7 +2432,7 @@ function getMarkers() {
     success: function(data) {
       root = new Root(2.5);
       data.country.forEach(function(country) {
-        var tempCountry = new Marker(parseFloat(country.latitude), parseFloat(country.longitude), [], 6,"Images/TopLevel.png");
+        var tempCountry = new Marker(country.name, parseFloat(country.latitude), parseFloat(country.longitude), [], 6,"Images/TopLevel.png");
         root.addChild(tempCountry);
 
         var handleBattle = function(battle) {
@@ -2440,7 +2441,7 @@ function getMarkers() {
           var year = parseInt(battle.year);
           var popupContent = createPopupContent(battle.name, battle.text || [], stats, year);
           var popup = new Popup(popupContent);
-          var tempBattle = new Marker(parseFloat(battle.latitude), parseFloat(battle.longitude), [year], 7, "Images/BattleMarker.png", popup);
+          var tempBattle = new Marker(battle.name, parseFloat(battle.latitude), parseFloat(battle.longitude), [year], 7, "Images/BattleMarker.png", popup);
           tempBattle.hide();
           tempCountry.addChild(tempBattle);
           tempCountry.addYear(year);
