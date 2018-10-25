@@ -488,3 +488,20 @@ span{
     
 }
 /*----------------------------------------------------------------------------------*/
+
+/*Start of References---------------------------------------------------------------*/
+
+#references{
+    margin:10px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#references ul{
+    list-style:none;
+}
+
+#references ul, #references p{
+    margin-left:10px;
+}
+
+/*End of References-----------------------------------------------------------------*/
