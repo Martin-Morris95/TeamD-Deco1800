@@ -70,8 +70,8 @@
     </country>
     <country>
         <name>France</name>
-        <longitude>2</longitude>
-        <latitude>46</latitude>
+        <longitude>2.49</longitude>
+        <latitude>49.92</latitude>
         <markers>
             <battle>
                 <name>Fromelles on the Somme</name>
@@ -307,8 +307,8 @@
         <markers>
             <battle>
                 <name>Rabaul</name>
-                <longitude>152.2</longitude>
-                <latitude>-4.3</latitude>
+                <longitude>146</longitude>
+                <latitude>-7</latitude>
                 <year>1914</year>
                 <casualties>6</casualties>
                 <text>Australians were sent to Papua New Guinea to capture and occupy the New Guineas colonies that Germany had control over.</text>

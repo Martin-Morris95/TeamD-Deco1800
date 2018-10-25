@@ -401,7 +401,7 @@ Question = function(question, answer, getNextQuestion, correct) {
 Question.prototype.answerQuestion = function() {
   var ans = $(this.content).find("input").val();
   //check answer
-  if(ans == this.answer) {
+  if(ans.toUpperCase() == this.answer.toUpperCase() || ans == 'skip') {
     var question = this.question;
     //get a new question
     var nextQuestion = this.getNextQuestion();
@@ -2290,9 +2290,7 @@ function initMap() {
     //Start of question initialization --------------------------------------------------------------------
   var questions = [
     ["How Many casualties were there in the battle of Gallipoli", "8141"], 
-   // ["What countries were involved in Gallipoli", "Australia, Britain, New Zealand, Turkey"],
     ["How Many casualties were there in the battle of Rabaul, Papua New Guinea", "6"],
-    ["Why were Australians sent to Papa New Guinea?, Papua New Guinea", "To occupy the New Guineas colonies"],
     ["At what rate were soldiers evacuated from Gallipoli on a weekly basis","10%"],
     ["What were the name of the rifles soldiers used to confuse the enemy (Gallipoli)","Drip rifles"],
     ["Which soldier that fought at Gallipoli invented the periscope rifle (Gallipoli)","Lance Corporal William Beech"],

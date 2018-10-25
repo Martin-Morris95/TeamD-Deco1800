@@ -209,18 +209,18 @@ footer ul{
 
 #textContainer{
     padding:0% 10%;
+    height:75%;
     
 }
 .popupText{
     overflow-y: scroll ;
     word-wrap: break-word;
-    height: 450px;
     border: 5px solid black;
     padding:25px;
     font-family: 'Roboto Condensed', sans-serif;
-   
-     background-image: url("../Images/paperTexture.png");
-      background-repeat: repeat-y;
+    background-image: url("../Images/paperTexture.png");
+    background-repeat: repeat-y;
+    height:inherit;
 }
 
 #headerPopup{
@@ -466,7 +466,7 @@ span{
     top :15%;
     left:40%;
     width:20%;
-    height:60%;
+    height:65%;
     z-index: 200;
 }
 
@@ -479,5 +479,12 @@ span{
     width:101%;
     padding:5px;
     background-color: #222222;
+}
+
+.cardBackground{
+    width:200%;
+    height:150%;
+    background-color: red;
+    
 }
 /*----------------------------------------------------------------------------------
